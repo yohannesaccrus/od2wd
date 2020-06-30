@@ -2,6 +2,19 @@ section {
 	&.about {
 		background-color: $color-smoke;
 		padding: 12.000em 12%;
+
+		@include media('desktop:hdpi@maximal', down) {
+			padding: 12.000em 8%;
+		}
+
+		@include media('ipad:pro@maximal', down) {
+			padding: 12.000em 3.000em;
+		}
+
+		@include media('phone:standard[potrait]@maximal', down) {
+			padding: 12.000em 1.500em;
+		}
+
 		.descriptive {
 			&[layer=about] {
 				background-color: $color-white;
@@ -35,16 +48,34 @@ section {
 					z-index: 0;
 					width: 70%;
 					height: .400em;
+
+					@include media('ipad:standard@maximal', down) {
+						right: unset;
+						left: -2%;
+					}
 				}
 
 				.text {
 					flex-basis: 70%;
+
+					@include media('ipad:pro@maximal', down) {
+						flex-basis: 60%;
+					}
+					@include media('ipad:standard@maximal', down) {
+						flex-basis: 100%;
+					}
+
 					h1, p {
 						@extend .light;
 					}
 					h1 {
 						color: rgba($color-dark, .7);
 						margin-bottom: .400em;
+
+						@include media('phone:standard[potrait]@maximal', down) {
+							font-size: 1.700em;
+						}
+
 						span {
 							font-weight: 600;
 						}
@@ -54,15 +85,28 @@ section {
 						font-size: 1.100em;
 						line-height: 1.700em;
 
+						@include media('phone:standard[potrait]@maximal', down) {
+							font-size: .900em;
+							text-align: justify;
+							text-indent: 1.700em;
+							line-height: 2.100em;
+						}
+
 						span {
 							font-weight: 600;
 						}
 					}
 				}
 				.media {
-					background-color: red;
 					flex-basis: 25%;
-				
+
+					@include media('ipad:pro@maximal', down) {
+						flex-basis: 35%;
+					}
+
+					@include media('ipad:standard@maximal', down) {
+						display: none;
+					}
 				
 					img {
 						box-shadow: 5px 5px 17px 10px rgba(0,0,0,0.05);
@@ -74,6 +118,17 @@ section {
 						height: 25.000em;
 						object-fit: cover;
 						transform: translateY(-50%);
+
+						@include media('ipad:pro@maximal', down) {
+							top: 50%;
+							right: 3%;
+							width: 35%;
+							height: 26.000em;
+						}
+
+						
+					
+						
 					}
 				}
 				

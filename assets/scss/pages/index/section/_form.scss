@@ -1,8 +1,10 @@
 section {
+	
 	&.form {
 		position: relative;
 		overflow: hidden;
 		padding: 10.000em 12%;
+		clip-path: polygon(0 0, 100% 8%, 100% 100%, 0% 100%);
 		@include media('desktop:xhdpi@maximal', down) {
 			padding: 10.000em 10%;
 		}

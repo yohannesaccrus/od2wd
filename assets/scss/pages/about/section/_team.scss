@@ -1,6 +1,23 @@
 section {
 	&.team {
 		padding: 10.000em 12%;
+
+		@include media('desktop:xhdpi@maximal', down) {
+			padding: 10.000em 10%;
+		}
+
+		@include media('desktop:hdpi@maximal', down) {
+			padding: 10.000em 8%;
+		}
+
+		@include media('ipad:pro@maximal', down) {
+			padding: 10.000em 3.000em;
+		}
+
+		@include media('phone:standard[potrait]@maximal', down) {
+			padding: 10.000em 1.500em;
+		}
+
 		.descriptive {
 			&[layer=title] {
 				text-align: center;
@@ -9,9 +26,11 @@ section {
 
 					color: rgba($color-dark, 0.6);
 					font-size: 2.200em;
-					span {
-						font-weight: 600;
+
+					@include media('phone:standard[potrait]@maximal', down) {
+						font-size: 1.700em;
 					}
+			
 					span {
 						font-weight: 600;
 					}
@@ -19,6 +38,10 @@ section {
 				p {
 					color: rgba($color-dark, 0.5);
 					font-size: 1.000em;
+
+					@include media('phone:standard[potrait]@maximal', down) {
+						font-size: .800em;
+					}
 				}
 			}
 			&[layer=card] {
@@ -28,12 +51,43 @@ section {
 				align-items: center;
 				justify-content: space-between;
 				margin-top: 3.000em;
+				
+				@include media('ipad:pro@maximal', down) {
+					flex-wrap: wrap;
+				}
+
+				@include media('phone:standard[potrait]@maximal', down) {
+					margin-top: 2.000em;
+				}
+
 				.card {
 					box-shadow: 5px 5px 17px 10px rgba($color-sky,0.050);
 					border-radius: .350em;
 					flex-basis: 20%;
 					overflow: hidden;
 					transition: all .5s ease;
+
+					@include media('desktop:xhdpi@maximal', down) {
+						flex-basis: 22%;
+					}
+					
+					@include media('ipad:pro@maximal', down) {
+						flex-basis: 47.5%;
+						&:first-child, &:nth-child(2) {
+							margin-bottom: 3.000em;
+						}
+					}
+
+					@include media('phone:standard[potrait]@maximal', down) {
+						flex-basis: 100%;
+						&:first-child, &:nth-child(2) {
+							margin-bottom: 0;
+						}
+						&:not(:last-child) {
+							margin-bottom: 2.000em;
+						}
+					}
+
 					&:hover {
 						box-shadow: 5px 5px 17px 10px rgba($color-sky,0.020);
 						transform: scale(1.03);
@@ -47,7 +101,9 @@ section {
 						}
 					}
 					.text {
+						position: relative;
 						padding: 1.000em;
+
 						h4 {
 							color: rgba($color-dark, 0.8);
 							font-size: 1.200em;
@@ -59,6 +115,11 @@ section {
 						ul {
 							display: flex;
 							margin-top: .800em;
+							@include media('phone:standard[potrait]@maximal', down) {
+								position: absolute;
+								right: 1.000em;
+								bottom: 1.000em;
+							}
 							li {
 								border-radius: .350em;
 								background: linear-gradient(to right, $color-sea, $color-leaf);

@@ -1,7 +1,11 @@
 footer {
     position: relative;
     text-align: center;
-    padding: 1.500em 0;
+	padding: 1.500em 0;
+	
+	@include media('phone:standard[potrait]@maximal', down) {
+		padding: 1.500em;
+	}
 
     .divider {
         background-color: rgba($color-dark, .1);

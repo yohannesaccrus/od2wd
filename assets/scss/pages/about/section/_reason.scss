@@ -4,17 +4,28 @@ section {
 		position: relative;
 		overflow: hidden;
 		padding: 10.000em 12%;
+
+		@include media('ipad:pro@maximal', down) {
+			padding: 10.000em 3.000em;
+		}
+
+		@include media('phone:standard[potrait]@maximal', down) {
+			padding: 10.000em 1.500em;
+		}
+
 		.descriptive {
 			&[layer=background] {
 				div {
 					background: linear-gradient(to left bottom, $color-sky, $color-sea);
 					position: absolute;
-					top: 0%;
-					right: -50%;
+					top: 0;
+					right: -65%;
 					width: 100%;
 					height: 100%;
-					transform: scale(.8) rotate(-90deg);
-					clip-path: polygon(49% 34%, 83% 6%, 100% 30%, 100% 100%, 0 100%, 0 26%, 22% 14%);
+					clip-path: polygon(11% 0, 100% 0, 100% 100%, 13% 100%, 0 75%, 13% 40%, 0 19%);
+					@include media('phone:standard[potrait]@maximal', down) {
+						display: none;
+					}
 				}
 				img {
 					position: absolute;
@@ -36,6 +47,15 @@ section {
 					display: inline-block;
 					position: relative;
 					margin-bottom: 1.500em;
+
+					@include media('ipad:standard@maximal', down) {
+						margin-bottom: 2.500em;
+					}
+
+					@include media('phone:standard[potrait]@maximal', down) {
+						font-size: 1.600em;
+					}
+
 					&::after {
 						content: '';
 						background: linear-gradient(to left bottom, $color-sky, $color-sea);
@@ -45,6 +65,9 @@ section {
 						left: -1%;
 						height: .150em;
 						width: 115%;
+						@include media('phone:standard[potrait]@maximal', down) {
+							width: 100%;
+						}
 					}
 					span {
 						font-weight: 600;
@@ -64,20 +87,39 @@ section {
 						line-height: 1.800em;
 						transition: all .5s ease;
 						padding: 2.200em 1.700em;
+
+						@include media('phone:standard[potrait]@maximal', down) {
+							font-size: .800em;
+							text-align: justify;
+							text-indent: 1.700em;
+						}
+
 						&:not(:last-child) {
 							margin-bottom: 3.500em;
+							@include media('ipad:pro@maximal', down) {
+								margin-bottom: 5.000em;
+							}
 						}
 						&:first-child {
 							left: -10%;
+							@include media('ipad:pro@maximal', down) {
+								left: 0;
+							}
 						}
 						&:last-child {
 							left: 10%;
+							@include media('ipad:pro@maximal', down) {
+								left: 0;
+							}
 						}
 						&:hover {
 							transform: scale(1.02);
 							span {
 								opacity: 1;
 								right: 2%;
+								@include media('ipad:standard@maximal', down) {
+									right: 5%;
+								}
 							}
 						}
 						span {
@@ -92,6 +134,34 @@ section {
 							opacity: 0;
 							transition: all .5s ease;
 							padding: .800em;
+
+							@include media('ipad:pro@maximal', down) {
+								opacity: 1;
+								right: 2%;
+							}
+
+							@include media('ipad:standard@maximal', down) {
+								top: -10%;
+								right: 5%;
+							}
+
+							@include media('phone:standard[potrait]@maximal', down) {
+								font-size: 1.000em;
+								text-indent: 0;
+								top: -4.5%;
+								padding: .600em .800em;
+							}
+						}
+						&:nth-child(2) {
+							span {
+								@include media('ipad:pro@maximal', down) {
+									left: 2%;
+									right: unset;
+								}
+								@include media('ipad:standard@maximal', down) {
+									left: 5%;
+								}
+							}
 						}
 					}
 				}

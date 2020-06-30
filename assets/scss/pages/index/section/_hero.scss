@@ -1,7 +1,9 @@
 section {
+	
     &.hero {
 		position: relative;
 		height: 100vh;
+		clip-path: polygon(0 0, 100% 0, 100% 91%, 0% 100%);
 		@include media('ipad:pro@maximal', down) {
 			height: 50vh;
 		}

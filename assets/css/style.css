@@ -242,7 +242,8 @@ body[page=index] nav {
 
 body[page=index] section.hero {
   position: relative;
-  height: 100vh; }
+  height: 100vh;
+  clip-path: polygon(0 0, 100% 0, 100% 91%, 0% 100%); }
   @media (max-width: 74.999em) {
     body[page=index] section.hero {
       height: 50vh; } }
@@ -504,7 +505,8 @@ body[page=index] section.hero {
 body[page=index] section.form {
   position: relative;
   overflow: hidden;
-  padding: 10.000em 12%; }
+  padding: 10.000em 12%;
+  clip-path: polygon(0 0, 100% 8%, 100% 100%, 0% 100%); }
   @media (max-width: 93.999em) {
     body[page=index] section.form {
       padding: 10.000em 10%; } }
@@ -706,7 +708,8 @@ body[page=index] section.form {
 
 body[page=index] section.demo {
   background-color: #E5F0FF;
-  padding: 10.000em 12%; }
+  padding: 10.000em 12%;
+  clip-path: polygon(0 0, 100% 8%, 100% 100%, 0% 100%); }
   @media (max-width: 93.999em) {
     body[page=index] section.demo {
       padding: 10.000em 10%; } }
@@ -1233,8 +1236,18 @@ body[page=about] section.hero {
   background: linear-gradient(to left bottom, #0246FF, #18C8FF);
   position: relative;
   height: 100vh;
-  overflow: hidden;
-  padding: 10.000em 12%; }
+  overflow: hidden; }
+  @media (max-width: 74.999em) {
+    body[page=about] section.hero {
+      height: 50vh; } }
+  @media (max-width: 63.999em) {
+    body[page=about] section.hero {
+      height: 70vh; } }
+  @media (max-width: 35.499em) {
+    body[page=about] section.hero {
+      height: auto;
+      box-sizing: border-box;
+      padding: 10.000em 0; } }
   body[page=about] section.hero .descriptive[layer=greeting] {
     display: flex;
     align-items: center;
@@ -1245,18 +1258,67 @@ body[page=about] section.hero {
     width: 100vw;
     transform: translate(-50%, -50%);
     padding: 0 0 0 12%; }
+    @media (max-width: 93.999em) {
+      body[page=about] section.hero .descriptive[layer=greeting] {
+        padding: 0 0 0 10%; } }
+    @media (max-width: 90.999em) {
+      body[page=about] section.hero .descriptive[layer=greeting] {
+        padding: 0 0 0 8%; } }
+    @media (max-width: 74.999em) {
+      body[page=about] section.hero .descriptive[layer=greeting] {
+        padding: 0 0 0 3.000em; } }
+    @media (max-width: 35.499em) {
+      body[page=about] section.hero .descriptive[layer=greeting] {
+        flex-wrap: wrap;
+        justify-content: center;
+        position: static;
+        transform: unset;
+        padding: 0 1.500em; } }
     body[page=about] section.hero .descriptive[layer=greeting] .text {
       flex-basis: 43%; }
+      @media (max-width: 63.999em) {
+        body[page=about] section.hero .descriptive[layer=greeting] .text {
+          flex-basis: 50%; } }
+      @media (max-width: 35.499em) {
+        body[page=about] section.hero .descriptive[layer=greeting] .text {
+          text-align: center;
+          flex-basis: 100%;
+          margin-bottom: 2.000em; } }
       body[page=about] section.hero .descriptive[layer=greeting] .text h1 {
         color: #FFFFFF;
         font-size: 2.400em;
         position: relative; }
+        @media (max-width: 89.999em) {
+          body[page=about] section.hero .descriptive[layer=greeting] .text h1 {
+            font-size: 2.100em; } }
+        @media (max-width: 74.999em) {
+          body[page=about] section.hero .descriptive[layer=greeting] .text h1 {
+            font-size: 1.800em; } }
+        @media (max-width: 63.999em) {
+          body[page=about] section.hero .descriptive[layer=greeting] .text h1 {
+            font-size: 1.600em; } }
+        @media (max-width: 35.499em) {
+          body[page=about] section.hero .descriptive[layer=greeting] .text h1 {
+            font-weight: 300;
+            font-size: 1.400em;
+            line-height: 1.700em; }
+            body[page=about] section.hero .descriptive[layer=greeting] .text h1 span {
+              font-weight: 600; } }
     body[page=about] section.hero .descriptive[layer=greeting] .media {
       flex-basis: 55%; }
+      @media (max-width: 35.499em) {
+        body[page=about] section.hero .descriptive[layer=greeting] .media {
+          display: none; } }
       body[page=about] section.hero .descriptive[layer=greeting] .media .box {
         position: relative;
         width: 100%;
         height: 100vh; }
+        @media (max-width: 74.999em) {
+          body[page=about] section.hero .descriptive[layer=greeting] .media .box {
+            height: 50vh; } }
+        @media (max-width: 63.999em) {
+          body[page=about] section.hero .descriptive[layer=greeting] .media .box {
+            height: 70vh; } }
         body[page=about] section.hero .descriptive[layer=greeting] .media .box img {
           box-shadow: 5px 5px 17px 10px rgba(0, 0, 0, 0.05);
           border-radius: .650em;
@@ -1268,6 +1330,18 @@ body[page=about] section.hero {
             width: 18.000em;
             height: 22.000em;
             filter: blur(0.8px); }
+            @media (max-width: 93.999em) {
+              body[page=about] section.hero .descriptive[layer=greeting] .media .box img:first-child {
+                width: 16.000em;
+                height: 18.000em; } }
+            @media (max-width: 74.999em) {
+              body[page=about] section.hero .descriptive[layer=greeting] .media .box img:first-child {
+                width: 12.000em;
+                height: 12.000em; } }
+            @media (max-width: 63.999em) {
+              body[page=about] section.hero .descriptive[layer=greeting] .media .box img:first-child {
+                width: 10.000em;
+                height: 10.000em; } }
           body[page=about] section.hero .descriptive[layer=greeting] .media .box img:nth-child(2) {
             top: 50%;
             left: 2%;
@@ -1275,6 +1349,19 @@ body[page=about] section.hero {
             height: 15.000em;
             transform: translateY(-50%);
             filter: blur(0.5px); }
+            @media (max-width: 93.999em) {
+              body[page=about] section.hero .descriptive[layer=greeting] .media .box img:nth-child(2) {
+                width: 13.000em;
+                height: 13.000em; } }
+            @media (max-width: 74.999em) {
+              body[page=about] section.hero .descriptive[layer=greeting] .media .box img:nth-child(2) {
+                left: 15%;
+                width: 9.000em;
+                height: 9.000em; } }
+            @media (max-width: 63.999em) {
+              body[page=about] section.hero .descriptive[layer=greeting] .media .box img:nth-child(2) {
+                width: 8.000em;
+                height: 8.000em; } }
           body[page=about] section.hero .descriptive[layer=greeting] .media .box img:nth-child(3) {
             top: 40%;
             right: 12%;
@@ -1282,6 +1369,20 @@ body[page=about] section.hero {
             height: 10.000em;
             transform: translateY(-50%);
             filter: blur(1.4px); }
+            @media (max-width: 93.999em) {
+              body[page=about] section.hero .descriptive[layer=greeting] .media .box img:nth-child(3) {
+                width: 8.000em;
+                height: 8.000em; } }
+            @media (max-width: 74.999em) {
+              body[page=about] section.hero .descriptive[layer=greeting] .media .box img:nth-child(3) {
+                top: 50%;
+                width: 6.000em;
+                height: 6.000em; } }
+            @media (max-width: 63.999em) {
+              body[page=about] section.hero .descriptive[layer=greeting] .media .box img:nth-child(3) {
+                top: 58%;
+                width: 5.000em;
+                height: 5.000em; } }
           body[page=about] section.hero .descriptive[layer=greeting] .media .box img:nth-child(4) {
             top: 20%;
             left: 26%;
@@ -1289,6 +1390,23 @@ body[page=about] section.hero {
             height: 11.200em;
             transform: translateY(-50%);
             filter: blur(0.8px); }
+            @media (max-width: 93.999em) {
+              body[page=about] section.hero .descriptive[layer=greeting] .media .box img:nth-child(4) {
+                top: 22%;
+                left: 33%;
+                width: 9.000em;
+                height: 9.000em; } }
+            @media (max-width: 74.999em) {
+              body[page=about] section.hero .descriptive[layer=greeting] .media .box img:nth-child(4) {
+                top: 25%;
+                left: 39%;
+                width: 7.000em;
+                height: 7.000em; } }
+            @media (max-width: 63.999em) {
+              body[page=about] section.hero .descriptive[layer=greeting] .media .box img:nth-child(4) {
+                left: 48%;
+                width: 6.500em;
+                height: 6.500em; } }
           body[page=about] section.hero .descriptive[layer=greeting] .media .box img:nth-child(5) {
             top: 18%;
             left: -12%;
@@ -1296,6 +1414,22 @@ body[page=about] section.hero {
             height: 7.000em;
             transform: translateY(-50%);
             filter: blur(1px); }
+            @media (max-width: 93.999em) {
+              body[page=about] section.hero .descriptive[layer=greeting] .media .box img:nth-child(5) {
+                width: 6.000em;
+                height: 6.000em; } }
+            @media (max-width: 74.999em) {
+              body[page=about] section.hero .descriptive[layer=greeting] .media .box img:nth-child(5) {
+                top: 22%;
+                left: 0;
+                width: 5.000em;
+                height: 5.000em; } }
+            @media (max-width: 63.999em) {
+              body[page=about] section.hero .descriptive[layer=greeting] .media .box img:nth-child(5) {
+                top: 18%;
+                left: 5%;
+                width: 4.800em;
+                height: 4.800em; } }
     body[page=about] section.hero .descriptive[layer=greeting] .counter {
       background-color: rgba(255, 255, 255, 0.2);
       box-shadow: 5px 5px 17px 10px rgba(0, 0, 0, 0.05);
@@ -1304,23 +1438,63 @@ body[page=about] section.hero {
       position: absolute;
       bottom: 4.000em;
       padding: 1.700em 2.000em; }
+      @media (max-width: 74.999em) {
+        body[page=about] section.hero .descriptive[layer=greeting] .counter {
+          padding: 1.300em; } }
+      @media (max-width: 63.999em) {
+        body[page=about] section.hero .descriptive[layer=greeting] .counter {
+          padding: 1.000em; } }
+      @media (max-width: 35.499em) {
+        body[page=about] section.hero .descriptive[layer=greeting] .counter {
+          position: static;
+          flex-basis: 80%;
+          justify-content: space-evenly;
+          padding: .900em .600em; } }
       body[page=about] section.hero .descriptive[layer=greeting] .counter .count {
         display: flex;
         flex-direction: column;
         align-items: center; }
         body[page=about] section.hero .descriptive[layer=greeting] .counter .count:not(:last-child) {
           margin-right: 2.500em; }
+          @media (max-width: 63.999em) {
+            body[page=about] section.hero .descriptive[layer=greeting] .counter .count:not(:last-child) {
+              margin-right: 2.000em; } }
+          @media (max-width: 35.499em) {
+            body[page=about] section.hero .descriptive[layer=greeting] .counter .count:not(:last-child) {
+              margin-right: 0; } }
         body[page=about] section.hero .descriptive[layer=greeting] .counter .count i, body[page=about] section.hero .descriptive[layer=greeting] .counter .count p {
           color: #FFFFFF; }
         body[page=about] section.hero .descriptive[layer=greeting] .counter .count p {
           font-size: 1.100em; }
+          @media (max-width: 63.999em) {
+            body[page=about] section.hero .descriptive[layer=greeting] .counter .count p {
+              font-size: .700em; } }
+          @media (max-width: 35.499em) {
+            body[page=about] section.hero .descriptive[layer=greeting] .counter .count p {
+              font-size: .500em; } }
         body[page=about] section.hero .descriptive[layer=greeting] .counter .count i {
           font-size: 2.200em;
           margin-bottom: .300em; }
+          @media (max-width: 63.999em) {
+            body[page=about] section.hero .descriptive[layer=greeting] .counter .count i {
+              font-size: 1.800em;
+              margin-bottom: .500em; } }
+          @media (max-width: 35.499em) {
+            body[page=about] section.hero .descriptive[layer=greeting] .counter .count i {
+              font-size: 1.500em; } }
 
 body[page=about] section.about {
   background-color: #E5F0FF;
   padding: 12.000em 12%; }
+  @media (max-width: 90.999em) {
+    body[page=about] section.about {
+      padding: 12.000em 8%; } }
+  @media (max-width: 74.999em) {
+    body[page=about] section.about {
+      padding: 12.000em 3.000em; } }
+  @media (max-width: 35.499em) {
+    body[page=about] section.about {
+      padding: 12.000em 1.500em; } }
   body[page=about] section.about .descriptive[layer=about] {
     background-color: #FFFFFF;
     border-radius: .650em;
@@ -1350,22 +1524,46 @@ body[page=about] section.about {
       z-index: 0;
       width: 70%;
       height: .400em; }
+      @media (max-width: 63.999em) {
+        body[page=about] section.about .descriptive[layer=about]::before {
+          right: unset;
+          left: -2%; } }
     body[page=about] section.about .descriptive[layer=about] .text {
       flex-basis: 70%; }
+      @media (max-width: 74.999em) {
+        body[page=about] section.about .descriptive[layer=about] .text {
+          flex-basis: 60%; } }
+      @media (max-width: 63.999em) {
+        body[page=about] section.about .descriptive[layer=about] .text {
+          flex-basis: 100%; } }
       body[page=about] section.about .descriptive[layer=about] .text h1 {
         color: rgba(47, 53, 66, 0.7);
         margin-bottom: .400em; }
+        @media (max-width: 35.499em) {
+          body[page=about] section.about .descriptive[layer=about] .text h1 {
+            font-size: 1.700em; } }
         body[page=about] section.about .descriptive[layer=about] .text h1 span {
           font-weight: 600; }
       body[page=about] section.about .descriptive[layer=about] .text p {
         color: rgba(47, 53, 66, 0.6);
         font-size: 1.100em;
         line-height: 1.700em; }
+        @media (max-width: 35.499em) {
+          body[page=about] section.about .descriptive[layer=about] .text p {
+            font-size: .900em;
+            text-align: justify;
+            text-indent: 1.700em;
+            line-height: 2.100em; } }
         body[page=about] section.about .descriptive[layer=about] .text p span {
           font-weight: 600; }
     body[page=about] section.about .descriptive[layer=about] .media {
-      background-color: red;
       flex-basis: 25%; }
+      @media (max-width: 74.999em) {
+        body[page=about] section.about .descriptive[layer=about] .media {
+          flex-basis: 35%; } }
+      @media (max-width: 63.999em) {
+        body[page=about] section.about .descriptive[layer=about] .media {
+          display: none; } }
       body[page=about] section.about .descriptive[layer=about] .media img {
         box-shadow: 5px 5px 17px 10px rgba(0, 0, 0, 0.05);
         border-radius: .650em;
@@ -1376,21 +1574,35 @@ body[page=about] section.about {
         height: 25.000em;
         object-fit: cover;
         transform: translateY(-50%); }
+        @media (max-width: 74.999em) {
+          body[page=about] section.about .descriptive[layer=about] .media img {
+            top: 50%;
+            right: 3%;
+            width: 35%;
+            height: 26.000em; } }
 
 body[page=about] section.article {
   background-color: #FFFFFF;
   position: relative;
   overflow: hidden;
   padding: 10.000em 12%; }
+  @media (max-width: 74.999em) {
+    body[page=about] section.article {
+      padding: 10.000em 3.000em; } }
+  @media (max-width: 35.499em) {
+    body[page=about] section.article {
+      padding: 10.000em 1.500em; } }
   body[page=about] section.article .descriptive[layer=background] div {
     background: linear-gradient(to left bottom, #0246FF, #18C8FF);
     position: absolute;
-    top: 0%;
-    right: -50%;
+    top: 0;
+    right: -65%;
     width: 100%;
     height: 100%;
-    transform: scale(0.8) rotate(-90deg);
-    clip-path: polygon(49% 34%, 83% 6%, 100% 30%, 100% 100%, 0 100%, 0 26%, 22% 14%); }
+    clip-path: polygon(11% 0, 100% 0, 100% 100%, 13% 100%, 0 75%, 13% 40%, 0 19%); }
+    @media (max-width: 35.499em) {
+      body[page=about] section.article .descriptive[layer=background] div {
+        display: none; } }
   body[page=about] section.article .descriptive[layer=background] img {
     position: absolute;
     top: 0;
@@ -1406,6 +1618,12 @@ body[page=about] section.article {
     display: inline-block;
     position: relative;
     margin-bottom: 1.500em; }
+    @media (max-width: 63.999em) {
+      body[page=about] section.article .descriptive[layer=title] h2 {
+        margin-bottom: 2.500em; } }
+    @media (max-width: 35.499em) {
+      body[page=about] section.article .descriptive[layer=title] h2 {
+        font-size: 1.600em; } }
     body[page=about] section.article .descriptive[layer=title] h2::after {
       content: '';
       background: linear-gradient(to left bottom, #0246FF, #18C8FF);
@@ -1415,6 +1633,9 @@ body[page=about] section.article {
       left: -1%;
       height: .150em;
       width: 115%; }
+      @media (max-width: 35.499em) {
+        body[page=about] section.article .descriptive[layer=title] h2::after {
+          width: 100%; } }
     body[page=about] section.article .descriptive[layer=title] h2 span {
       font-weight: 600; }
   body[page=about] section.article .descriptive[layer=reason] {
@@ -1429,17 +1650,34 @@ body[page=about] section.article {
       line-height: 1.800em;
       transition: all .5s ease;
       padding: 2.200em 1.700em; }
+      @media (max-width: 35.499em) {
+        body[page=about] section.article .descriptive[layer=reason] .text p {
+          font-size: .800em;
+          text-align: justify;
+          text-indent: 1.700em; } }
       body[page=about] section.article .descriptive[layer=reason] .text p:not(:last-child) {
         margin-bottom: 3.500em; }
+        @media (max-width: 74.999em) {
+          body[page=about] section.article .descriptive[layer=reason] .text p:not(:last-child) {
+            margin-bottom: 5.000em; } }
       body[page=about] section.article .descriptive[layer=reason] .text p:first-child {
         left: -10%; }
+        @media (max-width: 74.999em) {
+          body[page=about] section.article .descriptive[layer=reason] .text p:first-child {
+            left: 0; } }
       body[page=about] section.article .descriptive[layer=reason] .text p:last-child {
         left: 10%; }
+        @media (max-width: 74.999em) {
+          body[page=about] section.article .descriptive[layer=reason] .text p:last-child {
+            left: 0; } }
       body[page=about] section.article .descriptive[layer=reason] .text p:hover {
         transform: scale(1.02); }
         body[page=about] section.article .descriptive[layer=reason] .text p:hover span {
           opacity: 1;
           right: 2%; }
+          @media (max-width: 63.999em) {
+            body[page=about] section.article .descriptive[layer=reason] .text p:hover span {
+              right: 5%; } }
       body[page=about] section.article .descriptive[layer=reason] .text p span {
         color: #FFFFFF;
         background: linear-gradient(to right, #18C8FF, #1FAFF9);
@@ -1452,33 +1690,91 @@ body[page=about] section.article {
         opacity: 0;
         transition: all .5s ease;
         padding: .800em; }
+        @media (max-width: 74.999em) {
+          body[page=about] section.article .descriptive[layer=reason] .text p span {
+            opacity: 1;
+            right: 2%; } }
+        @media (max-width: 63.999em) {
+          body[page=about] section.article .descriptive[layer=reason] .text p span {
+            top: -10%;
+            right: 5%; } }
+        @media (max-width: 35.499em) {
+          body[page=about] section.article .descriptive[layer=reason] .text p span {
+            font-size: 1.000em;
+            text-indent: 0;
+            top: -4.5%;
+            padding: .600em .800em; } }
+      @media (max-width: 74.999em) {
+        body[page=about] section.article .descriptive[layer=reason] .text p:nth-child(2) span {
+          left: 2%;
+          right: unset; } }
+      @media (max-width: 63.999em) {
+        body[page=about] section.article .descriptive[layer=reason] .text p:nth-child(2) span {
+          left: 5%; } }
 
 body[page=about] section.team {
   padding: 10.000em 12%; }
+  @media (max-width: 93.999em) {
+    body[page=about] section.team {
+      padding: 10.000em 10%; } }
+  @media (max-width: 90.999em) {
+    body[page=about] section.team {
+      padding: 10.000em 8%; } }
+  @media (max-width: 74.999em) {
+    body[page=about] section.team {
+      padding: 10.000em 3.000em; } }
+  @media (max-width: 35.499em) {
+    body[page=about] section.team {
+      padding: 10.000em 1.500em; } }
   body[page=about] section.team .descriptive[layer=title] {
     text-align: center; }
     body[page=about] section.team .descriptive[layer=title] h2 {
       color: rgba(47, 53, 66, 0.6);
       font-size: 2.200em; }
-      body[page=about] section.team .descriptive[layer=title] h2 span {
-        font-weight: 600; }
+      @media (max-width: 35.499em) {
+        body[page=about] section.team .descriptive[layer=title] h2 {
+          font-size: 1.700em; } }
       body[page=about] section.team .descriptive[layer=title] h2 span {
         font-weight: 600; }
     body[page=about] section.team .descriptive[layer=title] p {
       color: rgba(47, 53, 66, 0.5);
       font-size: 1.000em; }
+      @media (max-width: 35.499em) {
+        body[page=about] section.team .descriptive[layer=title] p {
+          font-size: .800em; } }
   body[page=about] section.team .descriptive[layer=card] {
     background-color: #FFFFFF;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 3.000em; }
+    @media (max-width: 74.999em) {
+      body[page=about] section.team .descriptive[layer=card] {
+        flex-wrap: wrap; } }
+    @media (max-width: 35.499em) {
+      body[page=about] section.team .descriptive[layer=card] {
+        margin-top: 2.000em; } }
     body[page=about] section.team .descriptive[layer=card] .card {
       box-shadow: 5px 5px 17px 10px rgba(2, 70, 255, 0.05);
       border-radius: .350em;
       flex-basis: 20%;
       overflow: hidden;
       transition: all .5s ease; }
+      @media (max-width: 93.999em) {
+        body[page=about] section.team .descriptive[layer=card] .card {
+          flex-basis: 22%; } }
+      @media (max-width: 74.999em) {
+        body[page=about] section.team .descriptive[layer=card] .card {
+          flex-basis: 47.5%; }
+          body[page=about] section.team .descriptive[layer=card] .card:first-child, body[page=about] section.team .descriptive[layer=card] .card:nth-child(2) {
+            margin-bottom: 3.000em; } }
+      @media (max-width: 35.499em) {
+        body[page=about] section.team .descriptive[layer=card] .card {
+          flex-basis: 100%; }
+          body[page=about] section.team .descriptive[layer=card] .card:first-child, body[page=about] section.team .descriptive[layer=card] .card:nth-child(2) {
+            margin-bottom: 0; }
+          body[page=about] section.team .descriptive[layer=card] .card:not(:last-child) {
+            margin-bottom: 2.000em; } }
       body[page=about] section.team .descriptive[layer=card] .card:hover {
         box-shadow: 5px 5px 17px 10px rgba(2, 70, 255, 0.02);
         transform: scale(1.03); }
@@ -1488,6 +1784,7 @@ body[page=about] section.team {
         object-fit: cover;
         transition: all .5s ease-out; }
       body[page=about] section.team .descriptive[layer=card] .card .text {
+        position: relative;
         padding: 1.000em; }
         body[page=about] section.team .descriptive[layer=card] .card .text h4 {
           color: rgba(47, 53, 66, 0.8);
@@ -1498,6 +1795,11 @@ body[page=about] section.team {
         body[page=about] section.team .descriptive[layer=card] .card .text ul {
           display: flex;
           margin-top: .800em; }
+          @media (max-width: 35.499em) {
+            body[page=about] section.team .descriptive[layer=card] .card .text ul {
+              position: absolute;
+              right: 1.000em;
+              bottom: 1.000em; } }
           body[page=about] section.team .descriptive[layer=card] .card .text ul li {
             border-radius: .350em;
             background: linear-gradient(to right, #18C8FF, #1FAFF9);
@@ -1537,6 +1839,9 @@ body[page=about] footer {
   position: relative;
   text-align: center;
   padding: 1.500em 0; }
+  @media (max-width: 35.499em) {
+    body[page=about] footer {
+      padding: 1.500em; } }
   body[page=about] footer .divider {
     background-color: rgba(47, 53, 66, 0.1);
     border-radius: .350em;
