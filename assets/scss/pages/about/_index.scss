@@ -1,0 +1,10 @@
+body {
+	&[page=about] {
+		@import './section/nav';
+		@import './section/hero';
+		@import './section/about';
+		@import './section/reason';
+		@import './section/team';
+		@import './section/footer';
+	}
+}

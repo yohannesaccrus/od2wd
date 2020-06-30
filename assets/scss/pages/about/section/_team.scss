@@ -1,0 +1,154 @@
+section {
+	&.team {
+		padding: 10.000em 12%;
+		.descriptive {
+			&[layer=title] {
+				text-align: center;
+				h2 {
+					@extend .light;
+
+					color: rgba($color-dark, 0.6);
+					font-size: 2.200em;
+					span {
+						font-weight: 600;
+					}
+					span {
+						font-weight: 600;
+					}
+				}
+				p {
+					color: rgba($color-dark, 0.5);
+					font-size: 1.000em;
+				}
+			}
+			&[layer=card] {
+				background-color: $color-white;
+				
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				margin-top: 3.000em;
+				.card {
+					box-shadow: 5px 5px 17px 10px rgba($color-sky,0.050);
+					border-radius: .350em;
+					flex-basis: 20%;
+					overflow: hidden;
+					transition: all .5s ease;
+					&:hover {
+						box-shadow: 5px 5px 17px 10px rgba($color-sky,0.020);
+						transform: scale(1.03);
+					}
+					.media {
+						img {
+							width: 100%;
+							height: 15.000em;
+							object-fit: cover;
+							transition: all .5s ease-out;
+						}
+					}
+					.text {
+						padding: 1.000em;
+						h4 {
+							color: rgba($color-dark, 0.8);
+							font-size: 1.200em;
+						}
+						p {
+							color: rgba($color-dark, 0.5);
+							font-size: .800em;
+						}
+						ul {
+							display: flex;
+							margin-top: .800em;
+							li {
+								border-radius: .350em;
+								background: linear-gradient(to right, $color-sea, $color-leaf);
+								display: flex;
+								align-items: center;
+								justify-content: center;
+								width: 1.800em;
+									height: 1.800em;
+									transition: all .5s ease;
+									&:hover {
+										cursor: pointer;
+										a {
+											i {
+												transform: rotate(360deg);
+											}
+										}
+									}
+									&:not(:last-child) {
+										margin-right: .700em;
+									}
+								a {
+									
+									i {
+										color: $color-white;
+										transition: all .5s ease;
+									}
+								}
+							}
+						}
+					}
+				}
+				.card {
+					&:first-child {
+						.media {
+							img {
+								clip-path: polygon(100% 0, 100% 100%, 64% 92%, 21% 100%, 0 94%, 0 0);
+							}
+						}
+						&:hover {
+							.media {
+								img {
+									clip-path: polygon(100% 0, 100% 92%, 46% 100%, 21% 93%, 0 100%, 0 0);
+								}
+							}
+						}
+					}
+					&:nth-child(2) {
+						.media {
+							img {
+								clip-path: polygon(100% 0, 100% 92%, 53% 100%, 22% 93%, 0 100%, 0 0);
+							}
+						}
+						&:hover {
+							.media {
+								img {
+									clip-path: polygon(100% 0, 100% 100%, 64% 89%, 15% 96%, 0 81%, 0 0);
+								}
+							}
+						}
+					}
+					&:nth-child(3) {
+						.media {
+							img {
+								clip-path: polygon(100% 0, 100% 100%, 51% 91%, 10% 100%, 0 93%, 0 0);
+							}
+						}
+						&:hover {
+							.media {
+								img {
+									clip-path: polygon(100% 0, 100% 83%, 76% 100%, 51% 91%, 0 100%, 0 0);
+								}
+							}
+						}
+					}
+					&:last-child {
+						.media {
+							img {
+								clip-path: polygon(100% 0, 100% 89%, 63% 100%, 36% 92%, 0 96%, 0 0);
+							}
+						}
+						&:hover {
+							.media {
+								img {
+									clip-path: polygon(100% 0, 100% 100%, 65% 95%, 36% 100%, 0 86%, 0 0);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

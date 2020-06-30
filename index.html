@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+	<link rel="stylesheet" type="text/css"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+	<title>OD2WD</title>
+</head>
+
+<body page="index">
+	<nav>
+		<div class="descriptive" layer="logo">
+			<div class="media">
+				<h2 id="logo">0d2wd</h2>
+			</div>
+		</div>
+		<div class="descriptive" layer="toggle">
+			<button onclick="toggleNav()">
+				<i id="button" class="fas fa-ellipsis-v"></i>
+			</button>
+		</div>
+		<div class="descriptive" layer="menu">
+			<ul id="nav" class="">
+				<li>
+					<a href="index.html">Home</a>
+				</li>
+				<li>
+					<a>API</a>
+				</li>
+				<li>
+					<a>Paper</a>
+				</li>
+				<li>
+					<a>Repository</a>
+				</li>
+				<li>
+					<a href="about.html">About</a>
+				</li>
+				<li>
+					<button onclick="convert()" class="icon">
+						<i class="fas fa-file"></i>
+						Convert Now
+					</button>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<section class="hero">
+		<div class="descriptive" layer="background">
+			<img id="slider" src="https://bit.ly/312Lizi" alt="background">
+			<div class="overlay"></div>
+		</div>
+		<div class="descriptive" layer="banner">
+			<div class="text">
+				<h1>Tools you need for easy and fast quickstatements</h1>
+				<p>OD2WD is a tool to convert csv file from open data portals into quickstatements file that would be
+					used to republish data to Wikidata</p>
+				<div class="action">
+					<button class="icon" onclick="about()">
+						<i class="fas fa-search"></i>
+						About OD2WD
+					</button>
+					<button class="icon" onclick="demo()">
+						<i class="fas fa-cogs"></i>
+						How it Works
+					</button>
+				</div>
+			</div>
+			<div class="embed">
+				<div class="video up">
+					<img src="https://bit.ly/3enOcCE" />
+					<div class="play" onclick="toggleModal1()">
+						<i class="fas fa-play"></i>
+					</div>
+				</div>
+				<div class="video down">
+					<img src="https://bit.ly/312Lizi" />
+					<div class="play">
+						<i class="fas fa-play"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="form" class="form">
+		<div class="descriptive" layer="background">
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+		</div>
+		<div class="descriptive" layer="title">
+			<h2>Convert your Data Now</h2>
+			<p>Upload a csv file to be converted or Input the dataset link on open data sites</p>
+		</div>
+		<div class="descriptive" layer="convert">
+			<div class="convert">
+				<h4>Upload your data</h4>
+				<p>Upload Open Data CSV file manually</p>
+				<form>
+					<div class="group">
+						<label>File</label>
+						<input type="file" />
+					</div>
+					<div class="action">
+						<button>submit</button>
+					</div>
+				</form>
+			</div>
+			<div class="divider"></div>
+			<div class="convert">
+				<h4>Dataset Link</h4>
+				<p>Input dataset link from open data sites</p>
+				<form>
+					<div class="group">
+						<label>Link</label>
+						<input type="text" placeholder="link here" />
+					</div>
+					<div class="action">
+						<button>submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+	<section class="demo">
+		<div class="descriptive" layer="title">
+			<h2>Demo Video</h2>
+			<p>Follow these easy steps through this video to convert your data</p>
+		</div>
+		<div class="descriptive" layer="video">
+			<div class="video">
+				<div class="media">
+					<picture>
+						<img src="https://bit.ly/3enOcCE" />
+					</picture>
+					<button onclick="toggleModal1()">
+						<i class="fas fa-play"></i>
+					</button>
+				</div>
+
+				<div class="text">
+					<h4>
+						OD2WD About Video
+					</h4>
+					<p>
+						This video will guide you through the process on how the OD2WD can change the .CSV file into
+						wikidata quickstatements. The process is easy to follow, you just need to upload your data or
+						insert a link to be able to convert it into quickstatements.
+					</p>
+				</div>
+			</div>
+			<div class="video">
+				<div class="media">
+					<picture>
+						<img src="https://bit.ly/3enOcCE" />
+					</picture>
+					<button onclick="toggleModal2()">
+						<i class="fas fa-play"></i>
+					</button>
+				</div>
+
+				<div class="text">
+					<h4>
+						OD2WD API Demo Video
+					</h4>
+					<p>
+						We also have an API that helps you if you want to use our service through your own system. The
+						API is defined in the form of swagger and can be easily accessed by anyone who wants to.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="table">
+		<div class="descriptive" layer="counter">
+			<div class="count">
+				<i class="fas fa-users"></i>
+				<p>10.000 Users</p>
+			</div>
+			<div class="divider"></div>
+			<div class="count">
+				<i class="fas fa-file"></i>
+				<p>110 File(s) Converted</p>
+			</div>
+			<div class="divider"></div>
+			<div class="count">
+				<i class="fas fa-medal"></i>
+				<p>20 Awards</p>
+			</div>
+		</div>
+		<div class="descriptive" layer="title">
+			<h2>Data Catalogue</h2>
+			<p>Files that have been uploaded to OD2WD System</p>
+		</div>
+		<div class="descriptive" layer="catalogue">
+			<table>
+				<thead>
+					<th>Job Name</th>
+					<th>Upload Date</th>
+					<th>Detail</th>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td>
+							Data-Alamat-Pelayanan-Pajak-edited.csv
+						</td>
+						<td>
+							2020-06-19 17:14:28
+						</td>
+						<td>
+							<button>
+								See Job Detail
+							</button>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Data-Alamat-Pelayanan-Pajak-edited.csv
+						</td>
+						<td>
+							2020-06-19 17:14:28
+						</td>
+						<td>
+							<button>
+								See Job Detail
+							</button>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Data-Alamat-Pelayanan-Pajak-edited.csv
+						</td>
+						<td>
+							2020-06-19 17:14:28
+						</td>
+						<td>
+							<button>
+								See Job Detail
+							</button>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Data-Alamat-Pelayanan-Pajak-edited.csv
+						</td>
+						<td>
+							2020-06-19 17:14:28
+						</td>
+						<td>
+							<button>
+								See Job Detail
+							</button>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Data-Alamat-Pelayanan-Pajak-edited.csv
+						</td>
+						<td>
+							2020-06-19 17:14:28
+						</td>
+						<td>
+							<button>
+								See Job Detail
+							</button>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Data-Alamat-Pelayanan-Pajak-edited.csv
+						</td>
+						<td>
+							2020-06-19 17:14:28
+						</td>
+						<td>
+							<button>
+								See Job Detail
+							</button>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Data-Alamat-Pelayanan-Pajak-edited.csv
+						</td>
+						<td>
+							2020-06-19 17:14:28
+						</td>
+						<td>
+							<button>
+								See Job Detail
+							</button>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Data-Alamat-Pelayanan-Pajak-edited.csv
+						</td>
+						<td>
+							2020-06-19 17:14:28
+						</td>
+						<td>
+							<button>
+								See Job Detail
+							</button>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Data-Alamat-Pelayanan-Pajak-edited.csv
+						</td>
+						<td>
+							2020-06-19 17:14:28
+						</td>
+						<td>
+							<button>
+								See Job Detail
+							</button>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Data-Alamat-Pelayanan-Pajak-edited.csv
+						</td>
+						<td>
+							2020-06-19 17:14:28
+						</td>
+						<td>
+							<button>
+								See Job Detail
+							</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="descriptive" layer="pagination">
+			<ul>
+				<li>
+					<a><i class="fas fa-angle-left"></i></a>
+				</li>
+				<li>
+					<a>1</a>
+				</li>
+				<li>
+					<a>2</a>
+				</li>
+				<li>
+					<a>...</a>
+				</li>
+				<li>
+					<a>4</a>
+				</li>
+				<li>
+					<a>5</a>
+				</li>
+				<li>
+					<a><i class="fas fa-angle-right"></i></a>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<section class="modal">
+		<div class="descriptive" id="modal1">
+			<div class="video">
+				<iframe src="https://www.youtube.com/embed/oOjJdOQ8dwM">
+				</iframe>
+			</div>
+			<button onclick="toggleModal1()">
+				<i class="fas fa-times"></i>
+			</button>
+		</div>
+		<div class="descriptive" id="modal2">
+			<div class="video">
+				<iframe src="https://www.youtube.com/embed/SeKOgJ4PZMs">
+				</iframe>
+			</div>
+			<button onclick="toggleModal2()">
+				<i class="fas fa-times"></i>
+			</button>
+		</div>
+	</section>
+	<footer>
+		<div class="divider"></div>
+		<p>© 2020 OD2WD – Featured as Converter App | Made by Faiz</p>
+	</footer>
+	<script src="./script/pages/index/script.js"></script>
+
+</body>
+
+</html>

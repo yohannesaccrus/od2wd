@@ -1,0 +1,101 @@
+section {
+	&.article {
+		background-color: $color-white;
+		position: relative;
+		overflow: hidden;
+		padding: 10.000em 12%;
+		.descriptive {
+			&[layer=background] {
+				div {
+					background: linear-gradient(to left bottom, $color-sky, $color-sea);
+					position: absolute;
+					top: 0%;
+					right: -50%;
+					width: 100%;
+					height: 100%;
+					transform: scale(.8) rotate(-90deg);
+					clip-path: polygon(49% 34%, 83% 6%, 100% 30%, 100% 100%, 0 100%, 0 26%, 22% 14%);
+				}
+				img {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					opacity: .3;
+					filter: blur(2px);
+				}
+			}
+			&[layer=title] {
+				h2 {
+					@extend .light;
+
+					color: rgba($color-dark, 0.7);
+					font-size: 2.200em;
+					display: inline-block;
+					position: relative;
+					margin-bottom: 1.500em;
+					&::after {
+						content: '';
+						background: linear-gradient(to left bottom, $color-sky, $color-sea);
+						border-radius: .350em;
+						position: absolute;
+						bottom: -.300em;
+						left: -1%;
+						height: .150em;
+						width: 115%;
+					}
+					span {
+						font-weight: 600;
+					}
+				}
+			}
+			&[layer=reason] {
+				position: relative;
+				z-index: 2;
+				.text {
+					p {
+						color: rgba($color-dark, 0.5);
+						background-color: $color-white;
+						box-shadow: 5px 5px 17px 10px rgba($color-sky,0.050);
+						border-radius: .650em;
+						position: relative;
+						line-height: 1.800em;
+						transition: all .5s ease;
+						padding: 2.200em 1.700em;
+						&:not(:last-child) {
+							margin-bottom: 3.500em;
+						}
+						&:first-child {
+							left: -10%;
+						}
+						&:last-child {
+							left: 10%;
+						}
+						&:hover {
+							transform: scale(1.02);
+							span {
+								opacity: 1;
+								right: 2%;
+							}
+						}
+						span {
+							color: $color-white;
+							background: linear-gradient(to right, $color-sea, $color-leaf);
+							box-shadow: 5px 5px 17px 10px rgba($color-sky,0.080);
+							border-radius: .350em;
+							font-size: 1.200em;
+							position: absolute;
+							top: -14%;
+							right: -2%;
+							opacity: 0;
+							transition: all .5s ease;
+							padding: .800em;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,58 @@
+$breakpoints: (
+    'phone:standard[potrait]@minimal'   : 22.500em,
+    'phone:standard[potrait]@maximal'   : 35.499em,
+    'phone:standard[landscape]@minimal' : 35.500em,
+    'phone:standard[landscape]@maximal' : 47.999em,
+    'ipad:standard@minimal'             : 48.000em,
+    'ipad:standard@maximal'             : 63.999em, 
+    'ipad:pro@minimal'                  : 64.000em,
+    'ipad:pro@maximal'                  : 74.999em,
+    'desktop:mdpi@minimal'              : 75.000em,
+    'desktop:mdpi@maximal'              : 89.999em,
+	'desktop:hdpi@minimal'              : 90.000em,
+    'desktop:hdpi@maximal'   			: 90.999em,
+    'desktop:xhdpi@minimal'  			: 91.000em,
+    'desktop:xhdpi@maximal'  			: 93.999em,
+    'desktop:xxhdpi@minimal' 			: 94.000em 
+);
+
+@mixin media($breakpoint, $scale: down) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+        @if $scale == up {
+            @media (min-width: $breakpoint-value) {
+                @content;
+            }
+        } @else if $scale == down {
+            @media (max-width: $breakpoint-value) {
+                @content;
+            }
+        }
+    } @else {
+        @if $scale == up {
+            @media (min-width: $breakpoint) {
+                @content;
+            }
+        } @else if $scale == down {
+            @media (max-width: $breakpoint) {
+                @content;
+            }
+        }
+    }
+}
+
+@mixin media-range($lower, $upper) {
+    @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
+        $lower-breakpoint: map-get($breakpoints, $lower);
+        $upper-breakpoint: map-get($breakpoints, $upper);
+
+        @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint)) {
+            @content;
+        }
+    } @else {
+        @media (min-width: $lower) and (max-width: ($upper)) {
+            @content;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+footer {
+    position: relative;
+    text-align: center;
+    padding: 1.500em 0;
+
+    .divider {
+        background-color: rgba($color-dark, .1);
+        border-radius: .350em;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 90%;
+        height: .100em;
+        transform: translateX(-50%);
+    }
+
+    p {
+        color: rgba($color-dark, .5);
+		font-size: .900em;
+    }
+}

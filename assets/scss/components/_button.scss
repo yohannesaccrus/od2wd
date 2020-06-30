@@ -1,0 +1,23 @@
+button {
+	background-color: $color-white;
+	border-radius: .350em;
+	border: none;
+	outline: none;
+	padding: .800em 1.800em;
+	transition: all .5s ease;
+
+	&:hover {
+		cursor: pointer;
+		transform: scale(1.02);
+	}
+
+	&:active {
+		transform: scale(.98);
+	}
+
+	&.icon {
+		i {
+			margin-right: .500em;
+		}
+	}
+}
