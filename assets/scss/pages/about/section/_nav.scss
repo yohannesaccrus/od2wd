@@ -1,9 +1,8 @@
 nav {
+    @include display(row, center, space-between, nowrap);
+
     transition: all .3s ease-in-out;
     position: fixed;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     width: 100%;
     z-index: 3;
     padding: 1.500em 12%;
@@ -28,22 +27,18 @@ nav {
         padding: 1.300em 1.500em;
     }
 
-
     &.scrolled {
-        background: #ffffff;
-        box-shadow: 0px 10px 29px -13px rgba($color-sky, 0.15);
+        @include shadow(normal, $color-sky, .150);
+
+        background: $color-white;
 
         .descriptive {
             &[layer=logo] {
                 h2 {
-                    background: linear-gradient(to right bottom, $color-sky, $color-leaf);
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
+                    @include gradient-text(to right bottom, $color-sky, $color-leaf);
 
                     &.toggle {
-                        background: $color-white;
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
+                        @include gradient-text(to right, $color-white, $color-white);
                     }
                 }
             }
@@ -52,14 +47,10 @@ nav {
                 button {
                     i {
                         @include media('phone:standard[potrait]@maximal', down) {
-                            background: linear-gradient(to right bottom, $color-sky, $color-leaf);
-                            -webkit-background-clip: text;
-                            -webkit-text-fill-color: transparent;
+                            @include gradient-text(to right bottom, $color-sky, $color-leaf);
 
                             &.toggle {
-                                background: $color-white;
-                                -webkit-background-clip: text;
-                                -webkit-text-fill-color: transparent;
+                                @include gradient-text(to right, $color-white, $color-white);
                             }
                         }
 
@@ -71,25 +62,22 @@ nav {
                 ul {
                     li {
                         a {
-                            background: linear-gradient(to right, rgba($color-sky, .6), $color-leaf);
-                            -webkit-background-clip: text;
-                            -webkit-text-fill-color: transparent;
+                            @include gradient-text(to right, rgba($color-sky, .6), $color-leaf);
 
                             @include media('phone:standard[potrait]@maximal', down) {
-                                background: white;
-                                -webkit-background-clip: text;
-                                -webkit-text-fill-color: transparent;
+                                @include gradient-text(to right, $color-white, $color-white);
                             }
 
 
                             &::after {
-                                background: linear-gradient(to right bottom, rgba($color-sky, .7), $color-leaf);
+                                @include gradient-text(to right bottom, rgba($color-sky, .7), $color-leaf);
                             }
                         }
 
                         button {
+                            @include gradient(to right top, $color-navy, $color-sea);
+
                             color: $color-white;
-                            background: linear-gradient(to right top, #70a1ff, #18dcff);
                         }
                     }
                 }
@@ -104,10 +92,9 @@ nav {
 
             @include media('phone:standard[potrait]@maximal', down) {
                 text-align: right;
+                display: inline;
                 position: relative;
                 flex-basis: 50%;
-                display: inline;
-
                 z-index: 3;
 
                 button {
@@ -120,7 +107,7 @@ nav {
                         transition: all .5s ease-out;
 
                         &.toggle {
-                            color: white !important;
+                            color: $color-white !important;
                             transform: rotate(-360deg);
                         }
                     }
@@ -150,16 +137,14 @@ nav {
 
         &[layer=menu] {
             ul {
-                display: flex;
-                align-items: center;
+                @include display(row, center, flex-start, nowrap);
+
                 transition: all .5s ease;
 
                 @include media('phone:standard[potrait]@maximal', down) {
-                    background: linear-gradient(to right, rgba($color-sky, .92), $color-leaf);
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
+                    @include gradient(to right, rgba($color-sky, .92), $color-leaf);
+                    @include display(column, center, center, nowrap);
+
                     position: fixed;
                     top: 0;
                     left: -101%;
@@ -214,8 +199,8 @@ nav {
                     }
 
                     button {
+						color: rgba($color-dark, .8);
                         font-size: .900em;
-                        text-transform: uppercase;
 
                         @include media('ipad:standard@maximal', down) {
                             font-size: .700em;
@@ -226,8 +211,9 @@ nav {
                         }
 
                         @include media('phone:standard[potrait]@maximal', down) {
+                            @include gradient(to right top, $color-navy, $color-sky);
+
                             color: $color-white;
-                            background: linear-gradient(to right top, #70a1ff, #18dcff);
                         }
                     }
                 }

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500");
 *,
 *:after,
 *:before {
@@ -23,8 +23,7 @@ a,
 button,
 label,
 span {
-  color: #2f3542;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   line-height: 1.500em;
   margin: 0;
@@ -32,7 +31,7 @@ span {
 
 table th,
 table td {
-  font-family: 'Poppins', sans-serif; }
+  font-family: 'Montserrat', sans-serif; }
 
 h1 {
   font-size: 2.000em; }
@@ -1269,11 +1268,13 @@ body[page=index] section.modal .descriptive {
     top: 0; }
 
 body[page=about] nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
   transition: all .3s ease-in-out;
   position: fixed;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 100%;
   z-index: 3;
   padding: 1.500em 12%; }
@@ -1293,14 +1294,14 @@ body[page=about] nav {
     body[page=about] nav {
       padding: 1.300em 1.500em; } }
   body[page=about] nav.scrolled {
-    background: #ffffff;
-    box-shadow: 0px 10px 29px -13px rgba(2, 70, 255, 0.15); }
+    box-shadow: 0 0.425em 1.813em -0.813em rgba(2, 70, 255, 0.15);
+    background: #FFFFFF; }
     body[page=about] nav.scrolled .descriptive[layer=logo] h2 {
       background: linear-gradient(to right bottom, #0246FF, #1FAFF9);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent; }
       body[page=about] nav.scrolled .descriptive[layer=logo] h2.toggle {
-        background: #FFFFFF;
+        background: linear-gradient(to right, #FFFFFF, #FFFFFF);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent; }
     @media (max-width: 35.499em) {
@@ -1309,7 +1310,7 @@ body[page=about] nav {
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent; }
         body[page=about] nav.scrolled .descriptive[layer=toggle] button i.toggle {
-          background: #FFFFFF;
+          background: linear-gradient(to right, #FFFFFF, #FFFFFF);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent; } }
     body[page=about] nav.scrolled .descriptive[layer=menu] ul li a {
@@ -1318,22 +1319,24 @@ body[page=about] nav {
       -webkit-text-fill-color: transparent; }
       @media (max-width: 35.499em) {
         body[page=about] nav.scrolled .descriptive[layer=menu] ul li a {
-          background: white;
+          background: linear-gradient(to right, #FFFFFF, #FFFFFF);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent; } }
       body[page=about] nav.scrolled .descriptive[layer=menu] ul li a::after {
-        background: linear-gradient(to right bottom, rgba(2, 70, 255, 0.7), #1FAFF9); }
+        background: linear-gradient(to right bottom, rgba(2, 70, 255, 0.7), #1FAFF9);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; }
     body[page=about] nav.scrolled .descriptive[layer=menu] ul li button {
-      color: #FFFFFF;
-      background: linear-gradient(to right top, #70a1ff, #18dcff); }
+      background: linear-gradient(to right top, #70a1ff, #18C8FF);
+      color: #FFFFFF; }
   body[page=about] nav .descriptive[layer=toggle] {
     display: none; }
     @media (max-width: 35.499em) {
       body[page=about] nav .descriptive[layer=toggle] {
         text-align: right;
+        display: inline;
         position: relative;
         flex-basis: 50%;
-        display: inline;
         z-index: 3; }
         body[page=about] nav .descriptive[layer=toggle] button {
           background: none;
@@ -1343,7 +1346,7 @@ body[page=about] nav {
             font-size: 1.800em;
             transition: all .5s ease-out; }
             body[page=about] nav .descriptive[layer=toggle] button i.toggle {
-              color: white !important;
+              color: #FFFFFF !important;
               transform: rotate(-360deg); } }
   body[page=about] nav .descriptive[layer=logo] {
     position: relative;
@@ -1360,7 +1363,10 @@ body[page=about] nav {
           font-size: 1.300em; } }
   body[page=about] nav .descriptive[layer=menu] ul {
     display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
     transition: all .5s ease; }
     @media (max-width: 35.499em) {
       body[page=about] nav .descriptive[layer=menu] ul {
@@ -1369,6 +1375,7 @@ body[page=about] nav {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        flex-wrap: nowrap;
         position: fixed;
         top: 0;
         left: -101%;
@@ -1405,8 +1412,8 @@ body[page=about] nav {
       body[page=about] nav .descriptive[layer=menu] ul li a:hover::after {
         width: 100%; }
     body[page=about] nav .descriptive[layer=menu] ul li button {
-      font-size: .900em;
-      text-transform: uppercase; }
+      color: rgba(47, 53, 66, 0.8);
+      font-size: .900em; }
       @media (max-width: 63.999em) {
         body[page=about] nav .descriptive[layer=menu] ul li button {
           font-size: .700em; } }
@@ -1415,34 +1422,38 @@ body[page=about] nav {
           font-size: .950em; } }
       @media (max-width: 35.499em) {
         body[page=about] nav .descriptive[layer=menu] ul li button {
-          color: #FFFFFF;
-          background: linear-gradient(to right top, #70a1ff, #18dcff); } }
+          background: linear-gradient(to right top, #70a1ff, #0246FF);
+          color: #FFFFFF; } }
 
 body[page=about] section.hero {
   background: linear-gradient(to left bottom, #0246FF, #18C8FF);
   position: relative;
   height: 100vh;
-  overflow: hidden; }
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%); }
   @media (max-width: 74.999em) {
     body[page=about] section.hero {
-      height: 50vh; } }
+      height: 60vh; } }
   @media (max-width: 63.999em) {
     body[page=about] section.hero {
-      height: 70vh; } }
+      height: 80vh; } }
   @media (max-width: 35.499em) {
     body[page=about] section.hero {
       height: auto;
       box-sizing: border-box;
-      padding: 10.000em 0; } }
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
+      padding: 8.000em 0; } }
   body[page=about] section.hero .descriptive[layer=greeting] {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: nowrap;
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 100vw;
     transform: translate(-50%, -50%);
+    width: 100vw;
     padding: 0 0 0 12%; }
     @media (max-width: 93.999em) {
       body[page=about] section.hero .descriptive[layer=greeting] {
@@ -1455,8 +1466,11 @@ body[page=about] section.hero {
         padding: 0 0 0 3.000em; } }
     @media (max-width: 35.499em) {
       body[page=about] section.hero .descriptive[layer=greeting] {
-        flex-wrap: wrap;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
         justify-content: center;
+        flex-wrap: wrap;
         position: static;
         transform: unset;
         padding: 0 1.500em; } }
@@ -1506,12 +1520,12 @@ body[page=about] section.hero {
           body[page=about] section.hero .descriptive[layer=greeting] .media .box {
             height: 70vh; } }
         body[page=about] section.hero .descriptive[layer=greeting] .media .box img {
-          box-shadow: 5px 5px 17px 10px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 0.425em 1.813em -0.813em rgba(47, 53, 66, 0.05);
           border-radius: .650em;
           position: absolute;
           object-fit: cover; }
           body[page=about] section.hero .descriptive[layer=greeting] .media .box img:first-child {
-            bottom: 5%;
+            bottom: 6%;
             right: 8%;
             width: 18.000em;
             height: 22.000em;
@@ -1617,12 +1631,16 @@ body[page=about] section.hero {
                 width: 4.800em;
                 height: 4.800em; } }
     body[page=about] section.hero .descriptive[layer=greeting] .counter {
-      background-color: rgba(255, 255, 255, 0.2);
-      box-shadow: 5px 5px 17px 10px rgba(0, 0, 0, 0.05);
-      border-radius: .650em;
       display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      box-shadow: 0 0.425em 1.813em -0.813em rgba(47, 53, 66, 0.5);
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: .650em;
       position: absolute;
-      bottom: 4.000em;
+      bottom: 7.000em;
       padding: 1.700em 2.000em; }
       @media (max-width: 74.999em) {
         body[page=about] section.hero .descriptive[layer=greeting] .counter {
@@ -1632,14 +1650,20 @@ body[page=about] section.hero {
           padding: 1.000em; } }
       @media (max-width: 35.499em) {
         body[page=about] section.hero .descriptive[layer=greeting] .counter {
+          display: flex;
+          flex-direction: row;
+          align-items: stretch;
+          justify-content: space-evenly;
+          flex-wrap: nowrap;
           position: static;
           flex-basis: 80%;
-          justify-content: space-evenly;
           padding: .900em .600em; } }
       body[page=about] section.hero .descriptive[layer=greeting] .counter .count {
         display: flex;
         flex-direction: column;
-        align-items: center; }
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: nowrap; }
         body[page=about] section.hero .descriptive[layer=greeting] .counter .count:not(:last-child) {
           margin-right: 2.500em; }
           @media (max-width: 63.999em) {
@@ -1671,23 +1695,29 @@ body[page=about] section.hero {
 
 body[page=about] section.about {
   background-color: #E5F0FF;
-  padding: 12.000em 12%; }
+  padding: 18.000em 12% 22.000em 12%;
+  margin-top: -5.000em; }
   @media (max-width: 90.999em) {
     body[page=about] section.about {
-      padding: 12.000em 8%; } }
+      padding: 18.000em 8% 20.000em 8%; } }
   @media (max-width: 74.999em) {
     body[page=about] section.about {
-      padding: 12.000em 3.000em; } }
+      padding: 18.000em 3.000em 20.000em 3.000em; } }
+  @media (max-width: 63.999em) {
+    body[page=about] section.about {
+      padding: 15.000em 3.000em 22.000em 3.000em; } }
   @media (max-width: 35.499em) {
     body[page=about] section.about {
-      padding: 12.000em 1.500em; } }
+      padding: 12.000em 1.500em 20.000em 1.500em; } }
   body[page=about] section.about .descriptive[layer=about] {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
     background-color: #FFFFFF;
     border-radius: .650em;
     position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 2.000em;
     z-index: 2; }
     body[page=about] section.about .descriptive[layer=about]::after {
@@ -1771,13 +1801,20 @@ body[page=about] section.article {
   background-color: #FFFFFF;
   position: relative;
   overflow: hidden;
-  padding: 10.000em 12%; }
+  padding: 15.000em 12% 18.000em 12%;
+  clip-path: polygon(0 0, 100% 12%, 100% 100%, 0 100%);
+  margin-top: -12.000em; }
   @media (max-width: 74.999em) {
     body[page=about] section.article {
-      padding: 10.000em 3.000em; } }
+      padding: 18.000em 3.000em; } }
+  @media (max-width: 63.999em) {
+    body[page=about] section.article {
+      padding: 10.000em 3.000em 15.000em 3.000em;
+      clip-path: polygon(0 0, 100% 3%, 100% 100%, 0 100%); } }
   @media (max-width: 35.499em) {
     body[page=about] section.article {
-      padding: 10.000em 1.500em; } }
+      padding: 7.000em 1.500em 10.000em 1.500em;
+      clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 100%); } }
   body[page=about] section.article .descriptive[layer=background] div {
     background: linear-gradient(to left bottom, #0246FF, #18C8FF);
     position: absolute;
@@ -1786,6 +1823,9 @@ body[page=about] section.article {
     width: 100%;
     height: 100%;
     clip-path: polygon(11% 0, 100% 0, 100% 100%, 13% 100%, 0 75%, 13% 40%, 0 19%); }
+    @media (max-width: 63.999em) {
+      body[page=about] section.article .descriptive[layer=background] div {
+        right: -70%; } }
     @media (max-width: 35.499em) {
       body[page=about] section.article .descriptive[layer=background] div {
         display: none; } }
@@ -1811,8 +1851,8 @@ body[page=about] section.article {
       body[page=about] section.article .descriptive[layer=title] h2 {
         font-size: 1.600em; } }
     body[page=about] section.article .descriptive[layer=title] h2::after {
-      content: '';
       background: linear-gradient(to left bottom, #0246FF, #18C8FF);
+      content: '';
       border-radius: .350em;
       position: absolute;
       bottom: -.300em;
@@ -1828,9 +1868,9 @@ body[page=about] section.article {
     position: relative;
     z-index: 2; }
     body[page=about] section.article .descriptive[layer=reason] .text p {
+      box-shadow: 0 0.425em 1.813em -0.813em rgba(2, 70, 255, 0.05);
       color: rgba(47, 53, 66, 0.5);
       background-color: #FFFFFF;
-      box-shadow: 5px 5px 17px 10px rgba(2, 70, 255, 0.05);
       border-radius: .650em;
       position: relative;
       line-height: 1.800em;
@@ -1865,8 +1905,8 @@ body[page=about] section.article {
             body[page=about] section.article .descriptive[layer=reason] .text p:hover span {
               right: 5%; } }
       body[page=about] section.article .descriptive[layer=reason] .text p span {
-        color: #FFFFFF;
         background: linear-gradient(to right, #18C8FF, #1FAFF9);
+        color: #FFFFFF;
         box-shadow: 5px 5px 17px 10px rgba(2, 70, 255, 0.08);
         border-radius: .350em;
         font-size: 1.200em;
@@ -1899,19 +1939,28 @@ body[page=about] section.article {
           left: 5%; } }
 
 body[page=about] section.team {
-  padding: 10.000em 12%; }
+  background-color: #FFFFFF;
+  padding: 18.000em 12%;
+  clip-path: polygon(0 14%, 100% 0, 100% 100%, 0 100%);
+  margin-top: -9.000em; }
   @media (max-width: 93.999em) {
     body[page=about] section.team {
       padding: 10.000em 10%; } }
   @media (max-width: 90.999em) {
     body[page=about] section.team {
-      padding: 10.000em 8%; } }
+      padding: 13.000em 8%; } }
   @media (max-width: 74.999em) {
     body[page=about] section.team {
-      padding: 10.000em 3.000em; } }
+      margin-top: -11.000em;
+      padding: 14.000em 3.000em 12.000em 3.000em; } }
+  @media (max-width: 63.999em) {
+    body[page=about] section.team {
+      padding: 14.000em 3.000em 8.000em 3.000em; } }
   @media (max-width: 35.499em) {
     body[page=about] section.team {
-      padding: 10.000em 1.500em; } }
+      clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 100%);
+      margin-top: -5.000em;
+      padding: 8.000em 1.500em; } }
   body[page=about] section.team .descriptive[layer=title] {
     text-align: center; }
     body[page=about] section.team .descriptive[layer=title] h2 {
@@ -1929,10 +1978,12 @@ body[page=about] section.team {
         body[page=about] section.team .descriptive[layer=title] p {
           font-size: .800em; } }
   body[page=about] section.team .descriptive[layer=card] {
-    background-color: #FFFFFF;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: nowrap;
+    background-color: #FFFFFF;
     margin-top: 3.000em; }
     @media (max-width: 74.999em) {
       body[page=about] section.team .descriptive[layer=card] {
@@ -1972,6 +2023,9 @@ body[page=about] section.team {
       body[page=about] section.team .descriptive[layer=card] .card .text {
         position: relative;
         padding: 1.000em; }
+        @media (max-width: 35.499em) {
+          body[page=about] section.team .descriptive[layer=card] .card .text {
+            padding-bottom: 3.000em; } }
         body[page=about] section.team .descriptive[layer=card] .card .text h4 {
           color: rgba(47, 53, 66, 0.8);
           font-size: 1.200em; }
@@ -1980,6 +2034,10 @@ body[page=about] section.team {
           font-size: .800em; }
         body[page=about] section.team .descriptive[layer=card] .card .text ul {
           display: flex;
+          flex-direction: row;
+          align-items: stretch;
+          justify-content: flex-start;
+          flex-wrap: nowrap;
           margin-top: .800em; }
           @media (max-width: 35.499em) {
             body[page=about] section.team .descriptive[layer=card] .card .text ul {
@@ -1987,11 +2045,13 @@ body[page=about] section.team {
               right: 1.000em;
               bottom: 1.000em; } }
           body[page=about] section.team .descriptive[layer=card] .card .text ul li {
-            border-radius: .350em;
-            background: linear-gradient(to right, #18C8FF, #1FAFF9);
             display: flex;
+            flex-direction: row;
             align-items: center;
             justify-content: center;
+            flex-wrap: nowrap;
+            border-radius: .350em;
+            background: linear-gradient(to right, #18C8FF, #1FAFF9);
             width: 1.800em;
             height: 1.800em;
             transition: all .5s ease; }
@@ -2029,14 +2089,14 @@ body[page=about] footer {
     body[page=about] footer {
       padding: 1.500em; } }
   body[page=about] footer .divider {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: rgba(47, 53, 66, 0.1);
     border-radius: .350em;
-    position: absolute;
     top: 0;
-    left: 50%;
     width: 90%;
-    height: .100em;
-    transform: translateX(-50%); }
+    height: .100em; }
   body[page=about] footer p {
     color: rgba(47, 53, 66, 0.5);
     font-size: .900em; }

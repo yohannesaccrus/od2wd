@@ -3,29 +3,45 @@ section {
 		background-color: $color-white;
 		position: relative;
 		overflow: hidden;
-		padding: 10.000em 12%;
+		padding: 15.000em 12% 18.000em 12%;
+		clip-path: polygon(0 0, 100% 12%, 100% 100%, 0 100%);
+		margin-top: -12.000em;
 
 		@include media('ipad:pro@maximal', down) {
-			padding: 10.000em 3.000em;
+			padding: 18.000em 3.000em;
+		}
+
+		@include media('ipad:standard@maximal', down) {
+			padding: 10.000em 3.000em 15.000em 3.000em;
+			clip-path: polygon(0 0, 100% 3%, 100% 100%, 0 100%);
 		}
 
 		@include media('phone:standard[potrait]@maximal', down) {
-			padding: 10.000em 1.500em;
+			padding: 7.000em 1.500em 10.000em 1.500em;
+			clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 100%);
 		}
 
 		.descriptive {
 			&[layer=background] {
 				div {
-					background: linear-gradient(to left bottom, $color-sky, $color-sea);
+					@include gradient(to left bottom, $color-sky, $color-sea);
+
 					position: absolute;
 					top: 0;
 					right: -65%;
 					width: 100%;
 					height: 100%;
 					clip-path: polygon(11% 0, 100% 0, 100% 100%, 13% 100%, 0 75%, 13% 40%, 0 19%);
+
+					@include media('ipad:standard@maximal', down) {
+						right: -70%;
+					}
+
 					@include media('phone:standard[potrait]@maximal', down) {
 						display: none;
 					}
+
+					
 				}
 				img {
 					position: absolute;
@@ -57,17 +73,20 @@ section {
 					}
 
 					&::after {
+						@include gradient(to left bottom, $color-sky, $color-sea);
+
 						content: '';
-						background: linear-gradient(to left bottom, $color-sky, $color-sea);
 						border-radius: .350em;
 						position: absolute;
 						bottom: -.300em;
 						left: -1%;
 						height: .150em;
 						width: 115%;
+
 						@include media('phone:standard[potrait]@maximal', down) {
 							width: 100%;
 						}
+
 					}
 					span {
 						font-weight: 600;
@@ -79,9 +98,10 @@ section {
 				z-index: 2;
 				.text {
 					p {
+						@include shadow(normal, $color-sky, .05);
+
 						color: rgba($color-dark, 0.5);
 						background-color: $color-white;
-						box-shadow: 5px 5px 17px 10px rgba($color-sky,0.050);
 						border-radius: .650em;
 						position: relative;
 						line-height: 1.800em;
@@ -123,8 +143,9 @@ section {
 							}
 						}
 						span {
+							@include gradient(to right, $color-sea, $color-leaf);
+
 							color: $color-white;
-							background: linear-gradient(to right, $color-sea, $color-leaf);
 							box-shadow: 5px 5px 17px 10px rgba($color-sky,0.080);
 							border-radius: .350em;
 							font-size: 1.200em;

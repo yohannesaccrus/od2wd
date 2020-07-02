@@ -1,34 +1,33 @@
 section {
 	&.hero {
-		background: linear-gradient(to left bottom, $color-sky, $color-sea);
+		@include gradient(to left bottom, $color-sky, $color-sea);
+
 		position: relative;
 		height: 100vh;
 		overflow: hidden;
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
 
 		@include media('ipad:pro@maximal', down) {
-			height: 50vh;
+			height: 60vh;
 		}
 
 		@include media('ipad:standard@maximal', down) {
-			height: 70vh;
+			height: 80vh;
 		}
 
 		@include media('phone:standard[potrait]@maximal', down) {
 			height: auto;
 			box-sizing: border-box;
-			padding: 10.000em 0;
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
+			padding: 8.000em 0;
 		}
 
 		.descriptive {
 			&[layer=greeting] {
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
-				position: absolute;
-				top: 50%;
-				left: 50%;
+				@include display(row, center, space-between, nowrap);
+				@include position(center);
+
 				width: 100vw;
-				transform: translate(-50%, -50%);
 				padding: 0 0 0 12%;
 
 				@include media('desktop:xhdpi@maximal', down) {
@@ -44,8 +43,8 @@ section {
 				}
 
 				@include media('phone:standard[potrait]@maximal', down) {
-					flex-wrap: wrap;
-					justify-content: center;
+					@include display(row, center, center, wrap);
+
 					position: static;
 					transform: unset;
 					padding: 0 1.500em;
@@ -68,15 +67,19 @@ section {
 						color: $color-white;
 						font-size: 2.400em;
 						position: relative;
+						
 						@include media('desktop:mdpi@maximal', down) {
 							font-size: 2.100em;
 						}
+
 						@include media('ipad:pro@maximal', down) {
 							font-size: 1.800em;
 						}
+
 						@include media('ipad:standard@maximal', down) {
 							font-size: 1.600em;
 						}
+
 						@include media('phone:standard[potrait]@maximal', down) {
 							font-weight: 300;
 							font-size: 1.400em;
@@ -108,24 +111,29 @@ section {
 						}
 
 						img {
-							box-shadow: 5px 5px 17px 10px rgba(0,0,0,0.05);
+							@include shadow(normal, $color-dark, .05);
+
 							border-radius: .650em;
 							position: absolute;
 							object-fit: cover;
+
 							&:first-child {
-								bottom: 5%;
+								bottom: 6%;
 								right: 8%;
 								width: 18.000em;
 								height: 22.000em;
 								filter: blur(.8px);
+
 								@include media('desktop:xhdpi@maximal', down) {
 									width: 16.000em;
 									height: 18.000em;
 								}
+
 								@include media('ipad:pro@maximal', down) {
 									width: 12.000em;
 									height: 12.000em;
 								}
+
 								@include media('ipad:standard@maximal', down) {
 									width: 10.000em;
 									height: 10.000em;
@@ -138,19 +146,23 @@ section {
 								height: 15.000em;
 								transform: translateY(-50%);
 								filter: blur(.5px);
+
 								@include media('desktop:xhdpi@maximal', down) {
 									width: 13.000em;
 									height: 13.000em;
 								}
+
 								@include media('ipad:pro@maximal', down) {
 									left: 15%;
 									width: 9.000em;
 									height: 9.000em;
 								}
+
 								@include media('ipad:standard@maximal', down) {
 									width: 8.000em;
 									height: 8.000em;
 								}
+
 							}
 							&:nth-child(3) {
 								top: 40%;
@@ -159,20 +171,24 @@ section {
 								height: 10.000em;
 								transform: translateY(-50%);
 								filter: blur(1.4px);
+
 								@include media('desktop:xhdpi@maximal', down) {
 									width: 8.000em;
 									height: 8.000em;
 								}
+
 								@include media('ipad:pro@maximal', down) {
 									top: 50%;
 									width: 6.000em;
 									height: 6.000em;
 								}
+
 								@include media('ipad:standard@maximal', down) {
 									top: 58%;
 									width: 5.000em;
 									height: 5.000em;
 								}
+
 							}
 							&:nth-child(4) {
 								top: 20%;
@@ -181,23 +197,27 @@ section {
 								height: 11.200em;
 								transform: translateY(-50%);
 								filter: blur(.8px);
+
 								@include media('desktop:xhdpi@maximal', down) {
 									top: 22%;
 									left: 33%;
 									width: 9.000em;
 									height: 9.000em;
 								}
+
 								@include media('ipad:pro@maximal', down) {
 									top: 25%;
 									left: 39%;
 									width: 7.000em;
 									height: 7.000em;
 								}
+
 								@include media('ipad:standard@maximal', down) {
 									left: 48%;
 									width: 6.500em;
 									height: 6.500em;
 								}
+
 							}
 							&:nth-child(5) {
 								top: 18%;
@@ -206,33 +226,38 @@ section {
 								height: 7.000em;
 								transform: translateY(-50%);
 								filter: blur(1px);
+
 								@include media('desktop:xhdpi@maximal', down) {
 									width: 6.000em;
 									height: 6.000em;
 								}
+
 								@include media('ipad:pro@maximal', down) {
 									top: 22%;
 									left: 0;
 									width: 5.000em;
 									height: 5.000em;
 								}
+
 								@include media('ipad:standard@maximal', down) {
 									top: 18%;
 									left: 5%;
 									width: 4.800em;
 									height: 4.800em;
 								}
+
 							}
 						}
 					}
 				}
 				.counter {
+					@include display(row, stretch, flex-start, nowrap);
+					@include shadow(normal, $color-dark, .5);
+
 					background-color: rgba($color-white, .2);
-					box-shadow: 5px 5px 17px 10px rgba(0,0,0,0.05);
 					border-radius: .650em;
-					display: flex;
 					position: absolute;
-					bottom: 4.000em;
+					bottom: 7.000em;
 					padding: 1.700em 2.000em;
 
 					@include media('ipad:pro@maximal', down) {
@@ -244,42 +269,48 @@ section {
 					}
 
 					@include media('phone:standard[potrait]@maximal', down) {
+						@include display(row, stretch, space-evenly, nowrap);
+
 						position: static;
 						flex-basis: 80%;
-						justify-content: space-evenly;
 						padding: .900em .600em;
 					}
 					
 
 					.count {
-						display: flex;
-						flex-direction: column;
-						align-items: center;
+						@include display(column, center, flex-start, nowrap);
 
 						&:not(:last-child) {
 							margin-right: 2.500em;
+
 							@include media('ipad:standard@maximal', down) {
 								margin-right: 2.000em;
 							}
+
 							@include media('phone:standard[potrait]@maximal', down) {
 								margin-right: 0;
 							}
+
 						}
 						i, p {
 							color: $color-white;
 						}
 						p {
 							font-size: 1.100em;
+
 							@include media('ipad:standard@maximal', down) {
 								font-size: .700em;
 							}
+
 							@include media('phone:standard[potrait]@maximal', down) {
 								font-size: .500em;
 							}
+
 						}
 						i {
 							font-size: 2.200em;
 							margin-bottom: .300em;
+							
 							@include media('ipad:standard@maximal', down) {
 								font-size: 1.800em;
 								margin-bottom: .500em;

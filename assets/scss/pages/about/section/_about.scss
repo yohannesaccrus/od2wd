@@ -1,33 +1,38 @@
 section {
 	&.about {
 		background-color: $color-smoke;
-		padding: 12.000em 12%;
+		padding: 18.000em 12% 22.000em 12%;
+		margin-top: -5.000em;
 
 		@include media('desktop:hdpi@maximal', down) {
-			padding: 12.000em 8%;
+			padding: 18.000em 8% 20.000em 8%;
 		}
 
 		@include media('ipad:pro@maximal', down) {
-			padding: 12.000em 3.000em;
+			padding: 18.000em 3.000em 20.000em 3.000em;
+		}
+
+		@include media('ipad:standard@maximal', down) {
+			padding: 15.000em 3.000em 22.000em 3.000em;
 		}
 
 		@include media('phone:standard[potrait]@maximal', down) {
-			padding: 12.000em 1.500em;
+			padding: 12.000em 1.500em 20.000em 1.500em;
 		}
 
 		.descriptive {
 			&[layer=about] {
+				@include display(row, center, space-between, nowrap);
+
 				background-color: $color-white;
 				border-radius: .650em;
 				position: relative;
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
 				padding: 2.000em;
 				z-index: 2;
 
 				&::after {
-					background: linear-gradient(to left, $color-sky, $color-sea);
+					@include gradient(to left, $color-sky, $color-sea);
+
 					border-radius: .500em;
 					content: '';
 					position: absolute;
@@ -39,7 +44,8 @@ section {
 				}
 
 				&::before {
-					background: linear-gradient(to left bottom, $color-sky, $color-sea);
+					@include gradient(to left bottom, $color-sky, $color-sea);
+
 					border-radius: .500em;
 					content: '';
 					position: absolute;
@@ -125,13 +131,8 @@ section {
 							width: 35%;
 							height: 26.000em;
 						}
-
-						
-					
-						
 					}
 				}
-				
 			}
 		}
 	}
