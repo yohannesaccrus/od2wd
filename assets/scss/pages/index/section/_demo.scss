@@ -2,7 +2,6 @@ section {
     &.demo {
         background-color: $color-smoke;
 		padding: 10.000em 12%;
-		clip-path: polygon(0 0, 100% 8%, 100% 100%, 0% 100%);
 		@include media('desktop:xhdpi@maximal', down) {
 			padding: 10.000em 10%;
 		}
@@ -35,10 +34,10 @@ section {
 				}
 			}
             &[layer=video] {
-				display: flex;
-				flex-wrap: wrap;
-                justify-content: space-between;
+				@include display(row, stretch, space-between, wrap);
+
 				margin-top: 3.000em;
+
 				@include media('phone:standard[potrait]@maximal', down) {
 					margin-top: 2.000em;
 				}
@@ -100,14 +99,10 @@ section {
                         }
 
                         button {
+							@include display(row, center, center, nowrap);
+							@include position(center);
+
                             border-radius: 50%;
-                            position: absolute;
-                            top: 50%;
-                            left: 50%;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            transform: translate(-50%, -50%);
                             width: 5.000em;
 							height: 5.000em;
 							transition: all .3s ease;
@@ -127,10 +122,8 @@ section {
 							}
 
                             i {
-                                background: linear-gradient(to right bottom, $color-sky, $color-leaf);
+								@include gradient-text(to right bottom, $color-sky, $color-leaf);
                                 font-size: 1.700em;
-                                -webkit-background-clip: text;
-                                -webkit-text-fill-color: transparent;
                             }
                         }
 					}

@@ -10,38 +10,42 @@ section {
 			z-index: 10;
 			transition: all .5s ease-out;
 			.video {
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
+				@include position(center);
+
 				iframe {
 					border: none;
 					border-radius: .650em;
 					outline: none;
 					width: calc(100vw - 4.000em);
 					height: calc(100vh - 4.000em);
+
 					@include media('ipad:pro@maximal', down) {
 						height: calc(100vh - 20.000em);
 					}
+
 					@include media('ipad:standard@minimal', down) {
 						height: calc(100vh - 4.000em);
 					}
+
 				}
 			}
 			button {
+				@include gradient(to right bottom, $color-sky, $color-leaf);
+				@include shadow(normal, $color-sky, .35);
+
 				position: absolute;
-				background: linear-gradient(to right bottom, $color-sky, $color-leaf);
-				box-shadow: 0px 10px 29px -13px rgba($color-sky, 0.35);
 				z-index: 11;
 				bottom: 5%;
 				right: 3%;
 				padding: 0;
 				width: 5.000em;
 				height: 5.000em;
+
 				@include media('ipad:pro@maximal', down) {
 					right: 5%;
 					bottom: 3%;
 				}
+				
 				i {
 					color: $color-white;
 					font-size: 2.000em;

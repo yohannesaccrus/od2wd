@@ -1,254 +1,308 @@
 section {
-	
-	&.form {
-		position: relative;
-		overflow: hidden;
-		padding: 10.000em 12%;
-		clip-path: polygon(0 0, 100% 8%, 100% 100%, 0% 100%);
-		@include media('desktop:xhdpi@maximal', down) {
-			padding: 10.000em 10%;
-		}
-		@include media('desktop:hdpi@maximal', down) {
-			padding: 10.000em 8%;
-		}
-		@include media('ipad:pro@maximal', down) {
-			padding: 10.000em 3.000em;
-		}
-		@include media('ipad:standard@maximal', down) {
-			padding: 10.000em 1.000em;
-		}
-		.descriptive {
-			&[layer=background] {
-				.box {
-					background: transparent;
-					border: .450em solid $color-sea;
-					border-radius: .450em;
-					position: absolute;
-					width: 30.000em;
-					height: 30.000em;
-					transform: rotate(-30deg);
-					
-					&:first-child, &:nth-child(2) {
-						bottom: -15%;
-						left: -15%;
-						@include media('ipad:pro@maximal', down) {
-							left: -28%;
-						}
-						@include media('phone:standard[potrait]@maximal', down) {
-							left: -90%;
-						}
-					}
-					&:first-child {
-						animation: rotateLeft 15s ease infinite;
-					}
-					&:nth-child(2) {
-						transform: scale(.8) rotate(-30deg);
-						animation: rotateLeft2 15s ease 2s infinite;
-					}
+    &.form {
+        position: relative;
+        overflow: hidden;
+        padding: 10.000em 12%;
 
-					&:nth-child(3), &:nth-child(4) {
-						top: -15%;
-						right: -15%;
-						@include media('ipad:pro@maximal', down) {
-							right: -28%;
-						}
-						@include media('ipad:standard@maximal', down) {
-							top: 20%;
-							right: -40%;
-							z-index: -1;
-						}
-						@include media('phone:standard[potrait]@maximal', down) {
-							right: -90%;
-						}
-					}
-					&:nth-child(3) {
-						transform: scale(.8) rotate(-35deg);
-						animation: rotateLeft3 15s ease infinite;
-					}
-					&:nth-child(4) {
-						transform: scale(.6) rotate(-35deg);
-						animation: rotateLeft4 15s ease 2s infinite;
-					}
-				}
-			}
-			&[layer=title] {
-				text-align: center;
-				h2 {
-					color: rgba($color-dark, .7);
-					font-size: 2.200em;
-					@include media('phone:standard[potrait]@maximal', down) {
-						font-size: 1.800em;
-					}
-					@include media('phone:standard[potrait]@minimal', down) {
-						font-size: 1.500em;
-					}
-				}
-				p{
-					color: rgba($color-dark, .5);
-					font-size: 1.100em;
-					margin-top: .300em;
-					@include media('phone:standard[potrait]@maximal', down) {
-						font-size: .900em;
-					}
-					@include media('phone:standard[potrait]@minimal', down) {
-						font-size: .800em;
-					}
-				}
-			}
-			&[layer=convert] {
-				position: relative;
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: space-between;
-				margin-top: 5.000em;
-				@include media('ipad:standard@maximal', down) {
-					margin-top: 3.000em;
-				}
-				.convert {
-					background-color: $color-white;
-					box-shadow: 0px 0px 29px -13px rgba($color-sky, 0.35);
-					border-radius: .450em;
-					flex-basis: 47%;
-					transition: all .5s ease;
+        @include media('desktop:xhdpi@maximal', down) {
+            padding: 10.000em 10%;
+        }
+
+        @include media('desktop:hdpi@maximal', down) {
+            padding: 10.000em 8%;
+        }
+
+        @include media('ipad:pro@maximal', down) {
+            padding: 10.000em 3.000em;
+        }
+
+        @include media('ipad:standard@maximal', down) {
+            padding: 10.000em 1.000em;
+        }
+
+        .descriptive {
+            &[layer=background] {
+                .box {
+                    background: transparent;
+                    border: .450em solid $color-sea;
+                    border-radius: .450em;
+                    position: absolute;
+                    width: 30.000em;
+                    height: 30.000em;
+                    transform: rotate(-30deg);
+
+                    &:first-child,
+                    &:nth-child(2) {
+                        bottom: -15%;
+                        left: -15%;
+
+                        @include media('ipad:pro@maximal', down) {
+                            left: -28%;
+                        }
+
+                        @include media('phone:standard[potrait]@maximal', down) {
+                            left: -90%;
+                        }
+                    }
+
+                    &:first-child {
+                        animation: rotateLeft 15s ease infinite;
+                    }
+
+                    &:nth-child(2) {
+                        transform: scale(.8) rotate(-30deg);
+                        animation: rotateLeft2 15s ease 2s infinite;
+                    }
+
+                    &:nth-child(3),
+                    &:nth-child(4) {
+                        top: -15%;
+                        right: -15%;
+
+                        @include media('ipad:pro@maximal', down) {
+                            right: -28%;
+                        }
+
+                        @include media('ipad:standard@maximal', down) {
+                            top: 20%;
+                            right: -40%;
+                            z-index: -1;
+                        }
+
+                        @include media('phone:standard[potrait]@maximal', down) {
+                            right: -90%;
+                        }
+                    }
+
+                    &:nth-child(3) {
+                        transform: scale(.8) rotate(-35deg);
+                        animation: rotateLeft3 15s ease infinite;
+                    }
+
+                    &:nth-child(4) {
+                        transform: scale(.6) rotate(-35deg);
+                        animation: rotateLeft4 15s ease 2s infinite;
+                    }
+                }
+            }
+
+            &[layer=title] {
+                text-align: center;
+
+                h2 {
+                    color: rgba($color-dark, .7);
+                    font-size: 2.200em;
+
+                    @include media('phone:standard[potrait]@maximal', down) {
+                        font-size: 1.800em;
+                    }
+
+                    @include media('phone:standard[potrait]@minimal', down) {
+                        font-size: 1.500em;
+                    }
+                }
+
+                p {
+                    color: rgba($color-dark, .5);
+                    font-size: 1.100em;
+                    margin-top: .300em;
+
+                    @include media('phone:standard[potrait]@maximal', down) {
+                        font-size: .900em;
+                    }
+
+                    @include media('phone:standard[potrait]@minimal', down) {
+                        font-size: .800em;
+                    }
+                }
+            }
+
+            &[layer=convert] {
+				@include display(row, stretch, space-between, wrap);
+
+                position: relative;
+                margin-top: 5.000em;
+
+                @include media('ipad:standard@maximal', down) {
+                    margin-top: 3.000em;
+                }
+
+                .convert {
+					@include shadow(normal, $color-sky, .35);
+
+                    background-color: $color-white;
+                    border-radius: .450em;
+                    flex-basis: 47%;
+                    transition: all .5s ease;
 					padding: 2.000em;
-					@include media('ipad:standard@maximal', down) {
-						flex-basis: 100%;
-						&:first-child {
-							margin-bottom: 3.000em;
-						}
-					}
-					@include media('phone:standard[potrait]@minimal', down) {
-						padding: 1.300em;
-					}
+					
 					&:hover {
-						box-shadow: 0px 0px 29px -3px rgba($color-sky, 0.25);
-					}
-					h4 {
-						color: rgba($color-dark, .7);
-						@include media('phone:standard[potrait]@maximal', down) {
-							font-size: 1.200em;
-						}
-					}
-					p {
-						color: rgba($color-dark, .5);
-						@include media('phone:standard[potrait]@maximal', down) {
-							font-size: .800em;
-							margin-top: .500em;
-						}
-					}
-					form {
-						margin-top: 2.200em;
-						.group {
-							position: relative;
-							label {
-								color: rgba($color-dark, .6);
-								background-color: $color-white;
-								position: absolute;
-								top: -.780em;
-								left: .780em;
-								padding: 0 .500em;
-							}
-							input {
-								border: .100em solid rgba($color-dark, .100);
-								outline: none;
-								border-radius: .450em;
-								width: 100%;
-								transition: all 1.5s ease;
-								padding: 1.600em 1.400em 1.200em 1.400em;
-								&:focus {
-									border: .100em solid rgba($color-dark, .400);
-									&::placeholder {
-										opacity: 0;
-										transform: translateX(1.000em);
-									}
-								}
-								&::placeholder {
-									color: rgba($color-dark, .250);
-									transition: all .5s ease;
-								}
-								&::-webkit-file-upload-button {
-									color: rgba($color-dark, .6);
-									border: none;
-									border-radius: .350em;
-								  }
-							}
-						}
-						.action {
-							margin-top: 2.000em;
-							button {
-								color: $color-white;
-								background: linear-gradient(to right top, #70a1ff, #18dcff);
-								font-weight: 600;
-								text-transform: uppercase;
-								padding: .600em 1.500em;
-								@include media('phone:standard[potrait]@maximal', down) {
-									width: 100%;
-								}
-							}
-						}
-					}
-				}
-				.divider {
-					background-color: rgba($color-dark, .5);
-					border-radius: .350em;
-					position: absolute;
-					top: 50%;
-					left: 50%;
-					width: .150em;
-					height: 95%;
-					transform: translate(-50%, -50%);
-					opacity: .3;
-					@include media('ipad:standard@maximal', down) {
-						display: none;
-					}
-				}
-			}
-		}
-	}
+                        @include shadow(hover, $color-sky, .15);
+                    }
+
+                    @include media('ipad:standard@maximal', down) {
+                        flex-basis: 100%;
+
+                        &:first-child {
+                            margin-bottom: 3.000em;
+                        }
+                    }
+
+                    @include media('phone:standard[potrait]@minimal', down) {
+                        padding: 1.300em;
+                    }
+
+                    h4 {
+                        color: rgba($color-dark, .7);
+
+                        @include media('phone:standard[potrait]@maximal', down) {
+                            font-size: 1.200em;
+                        }
+                    }
+
+                    p {
+                        color: rgba($color-dark, .5);
+
+                        @include media('phone:standard[potrait]@maximal', down) {
+                            font-size: .800em;
+                            margin-top: .500em;
+                        }
+                    }
+
+                    form {
+                        margin-top: 2.200em;
+
+                        .group {
+                            position: relative;
+
+                            label {
+                                color: rgba($color-dark, .6);
+                                background-color: $color-white;
+                                position: absolute;
+                                top: -.780em;
+                                left: .780em;
+                                padding: 0 .500em;
+                            }
+
+                            input {
+                                border: .100em solid rgba($color-dark, .100);
+                                outline: none;
+                                border-radius: .450em;
+                                width: 100%;
+                                transition: all 1.5s ease;
+                                padding: 1.600em 1.400em 1.200em 1.400em;
+
+                                &:focus {
+                                    border: .100em solid rgba($color-dark, .400);
+
+                                    &::placeholder {
+                                        opacity: 0;
+                                        transform: translateX(1.000em);
+                                    }
+                                }
+
+                                &::placeholder {
+                                    color: rgba($color-dark, .250);
+                                    transition: all .5s ease;
+                                }
+
+                                &::-webkit-file-upload-button {
+                                    color: rgba($color-dark, .6);
+                                    border: none;
+                                    border-radius: .350em;
+                                }
+                            }
+                        }
+
+                        .action {
+                            margin-top: 2.000em;
+
+                            button {
+								@include gradient(to right top, $color-navy, $color-sea);
+
+                                color: $color-white;
+                                font-weight: 600;
+                                text-transform: uppercase;
+                                padding: .600em 1.500em;
+
+                                @include media('phone:standard[potrait]@maximal', down) {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .divider {
+					@include position(center)
+
+                    background-color: rgba($color-dark, .5);
+                    border-radius: .350em;
+                    width: .150em;
+                    height: 95%;
+                    opacity: .3;
+
+                    @include media('ipad:standard@maximal', down) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @keyframes rotateLeft {
-	0% {
-		transform: rotate(-30deg);
-	}
-	50% {
-		transform: rotate(-35deg);
-	}
-	100% {
-		transform: rotate(-30deg);
-	}
+    0% {
+        transform: rotate(-30deg);
+    }
+
+    50% {
+        transform: rotate(-35deg);
+    }
+
+    100% {
+        transform: rotate(-30deg);
+    }
 }
 
 @keyframes rotateLeft2 {
-	0% {
-		transform: scale(.8) rotate(-30deg);
-	}
-	50% {
-		transform: scale(.8) rotate(-25deg);
-	}
-	100% {
-		transform: scale(.8) rotate(-30deg);
-	}
+    0% {
+        transform: scale(.8) rotate(-30deg);
+    }
+
+    50% {
+        transform: scale(.8) rotate(-25deg);
+    }
+
+    100% {
+        transform: scale(.8) rotate(-30deg);
+    }
 }
+
 @keyframes rotateLeft3 {
-	0% {
-		transform: scale(.8) rotate(-35deg);
-	}
-	50% {
-		transform: scale(.8) rotate(-40deg);
-	}
-	100% {
-		transform: scale(.8) rotate(-35deg);
-	}
+    0% {
+        transform: scale(.8) rotate(-35deg);
+    }
+
+    50% {
+        transform: scale(.8) rotate(-40deg);
+    }
+
+    100% {
+        transform: scale(.8) rotate(-35deg);
+    }
 }
+
 @keyframes rotateLeft4 {
-	0% {
-		transform: scale(.6) rotate(-35deg);
-	}
-	50% {
-		transform: scale(.6) rotate(-30deg);
-	}
-	100% {
-		transform: scale(.6) rotate(-35deg);
-	}
+    0% {
+        transform: scale(.6) rotate(-35deg);
+    }
+
+    50% {
+        transform: scale(.6) rotate(-30deg);
+    }
+
+    100% {
+        transform: scale(.6) rotate(-35deg);
+    }
 }

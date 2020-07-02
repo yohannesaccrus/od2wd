@@ -2,78 +2,90 @@ section {
     &.table {
         position: relative;
 		padding: 10.000em 12% 8.000em 12%;
+
 		@include media('desktop:xhdpi@maximal', down) {
 			padding: 10.000em 10% 8.000em 10%;
 		}
+
 		@include media('desktop:hdpi@maximal', down) {
 			padding: 10.000em 8% 8.000em 8%;
 		}
+
 		@include media('ipad:pro@maximal', down) {
 			padding: 10.000em 3.000em;
 		}
+
 		@include media('ipad:standard@maximal', down) {
 			padding: 10.000em 1.000em;
 		}
 
         .descriptive {
             &[layer=counter] {
+				@include display(row, center, center, nowrap);
+				@include shadow(normal, $color-sky, .25);
+
                 background-color: $color-white;
                 border-radius: .650em;
-                box-shadow: 0px 0px 29px -13px rgba($color-sky, 0.45);
-                display: flex;
-				align-items: center;
-				justify-content: center;
                 position: absolute;
                 top: 0;
                 left: 50%;
                 transform: translate(-50%, -50%);
 				padding: 2.000em;
+
 				@include media('desktop:xhdpi@maximal', down) {
 					width: 65%;
 				}
+
 				@include media('ipad:pro@maximal', down) {
 					width: 80%;
 				}
+
 				@include media('ipad:standard@maximal', down) {
 					width: 85%;
 				}
+
 				@include media('phone:standard[potrait]@maximal', down) {
-					justify-content: space-between;
+					@include display(row, center, space-between, nowrap);
 					padding: 1.500em 1.000em;
 				}
 
                 .count {
+					@include display(row, center, flex-start, nowrap);
 
-                    font-size: 1.250em;
-                    display: flex;
-					align-items: center;
+					font-size: 1.250em;
+					
 					@include media('ipad:standard@maximal', down) {
-						flex-direction: column;
+						@include display(column, center, flex-start, nowrap);
 					}
 
                     p {
 						color: rgba($color-dark, 0.8);
+
 						@include media('ipad:standard@maximal', down) {
 							font-size: .900em;
 							margin-top: 1.000em;
 						}
+
 						@include media('phone:standard[potrait]@maximal', down) {
 							font-size: .500em;
 						}
+
                     }
 
                     i {
-						background: linear-gradient(to right top, #70a1ff, #18dcff);
+						@include gradient-text(to right top, $color-navy, $color-sea);
+
                         font-size: 1.400em;
-                        margin-right: .800em;
-                        -webkit-background-clip: text;
-						-webkit-text-fill-color: transparent;
+						margin-right: .800em;
+						
 						@include media('ipad:standard@maximal', down) {
 							margin-right: 0;
 						}
+
 						@include media('phone:standard[potrait]@maximal', down) {
 							font-size: 1.000em;
 						}
+
                     }
                 }
 
@@ -83,13 +95,16 @@ section {
                     width: .100em;
                     height: 3.000em;
 					margin: 0 2.200em;
+
 					@include media('ipad:standard@maximal', down) {
 						height: 5.000em;
 					}
+
 					@include media('phone:standard[potrait]@maximal', down) {
 						height: 3.000em;
 						margin: 0 .500em;
 					}
+
                 }
             }
 
@@ -98,24 +113,30 @@ section {
 				h2 {
 					color: rgba($color-dark, .7);
 					font-size: 2.200em;
+
 					@include media('phone:standard[potrait]@maximal', down) {
 						font-size: 1.800em;
 					}
+
 				}
 				p{
 					color: rgba($color-dark, .5);
 					font-size: 1.100em;
 					margin-top: .300em;
+
 					@include media('phone:standard[potrait]@maximal', down) {
 						font-size: .900em;
 					}
+
 				}
 			}
 
             &[layer=catalogue] {
 				margin-top: 3.000em;
+
 				@include media('ipad:standard@maximal', down) {
-					box-shadow: 0px 5px 25px 0px rgba($color-sky, 0.13);
+					@include shadow(normal, $color-sky, .13);
+
 					position: relative;
 					width: 100%;
 					height: 80vh;
@@ -123,11 +144,13 @@ section {
 				}
 
                 table {
+					@include shadow(normal, $color-sky, .33);
+
                     width: 100%;
                     border-collapse: collapse;
                     border-radius: .350em;
-                    box-shadow: 0px 5px 25px 0px rgba($color-sky, 0.13);
 					overflow: hidden;
+
 					@include media('ipad:standard@maximal', down) {
 						position: absolute;
 						top: 0;
@@ -182,42 +205,48 @@ section {
 
             &[layer=pagination] {
                 ul {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+					@include display(row, center, center, nowrap);
+
                     margin-top: 3.500em;
 
                     li {
+						@include display(row, center, center, nowrap);
+						@include shadow(normal, $color-sky, .65);
+
 						background-color: $color-white;
-						box-shadow: 0px 0px 29px -13px rgba($color-sky, 0.65);
 						border-radius: 50%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
                         width: 3.000em;
 						height: 3.000em;
 						transition: all .5s ease;
+
 						@include media('phone:standard[potrait]@maximal', down) {
 							width: 2.500em;
 							height: 2.500em;
 						}
+
 						@include media('phone:standard[potrait]@minimal', down) {
 							width: 2.000em;
 							height: 2.000em;
 						}
+
 						&:not(:last-child) {
 							margin-right: 2.000em;
+
 							@include media('phone:standard[potrait]@maximal', down) {
 								margin-right: .800em;
 							}
+
 							@include media('phone:standard[potrait]@minimal', down) {
 								margin-right: .500em;
 							}
+
 						}
 						&:hover {
+							@include shadow(hover, $color-sky, .85);
+
 							background-color: $color-sea;
-							box-shadow: 0px 10px 29px -13px rgba($color-sky, 0.85);
 							cursor: pointer;
+
 							a {
 								color: $color-white;
 							}
@@ -226,15 +255,18 @@ section {
                         a {
 							color: rgba($color-dark, 0.5);
 							font-size: 1.100em;
+
 							@include media('phone:standard[potrait]@maximal', down) {
 								font-size: .900em;
 							}
 							
 							i {
 								font-size: 1.250em;
+
 								@include media('phone:standard[potrait]@maximal', down) {
 									font-size: 1.000em;
 								}
+
 							}
                         }
                     }

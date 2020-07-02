@@ -1,0 +1,186 @@
+section {
+    &.stages {
+        position: relative;
+        padding: 10.000em 8%;
+
+        @include media('desktop:xhdpi@maximal', down) {
+            padding: 10.000em 5%;
+        }
+
+        @include media('desktop:hdpi@maximal', down) {
+            padding: 10.000em 3%;
+        }
+
+        .descriptive {
+            &[layer=background] {
+                display: none;
+                overflow: hidden;
+
+                @include media('ipad:pro@maximal', down) {
+                    display: inline;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+
+                    img {
+                        position: absolute;
+                        right: -20%;
+                        bottom: -15%;
+                        width: 50.000em;
+                        height: 50.000em;
+                        object-fit: contain;
+
+                        @include media('ipad:standard@maximal', down) {
+                            right: -35%;
+                            bottom: -12%;
+                            height: 45.000em;
+                            width: 45.000em;
+                        }
+                    }
+                }
+
+                @include media('phone:standard[potrait]@maximal', down) {
+                    display: none;
+                }
+            }
+
+            &[layer=title] {
+                text-align: right;
+
+                h2 {
+                    color: rgba($color-dark, .7);
+                    font-size: 2.200em;
+
+                    @include media('phone:standard[potrait]@maximal', down) {
+                        font-size: 1.800em;
+                    }
+
+                    @include media('phone:standard[potrait]@minimal', down) {
+                        font-size: 1.500em;
+                    }
+                }
+
+                p {
+                    color: rgba($color-dark, .5);
+                    font-size: 1.100em;
+                    margin-top: .300em;
+
+                    @include media('phone:standard[potrait]@maximal', down) {
+                        font-size: .900em;
+                    }
+
+                    @include media('phone:standard[potrait]@minimal', down) {
+                        font-size: .800em;
+                    }
+                }
+            }
+
+            &[layer=step] {
+                margin-top: 2.000em;
+
+                .container {
+                    position: relative;
+                    width: 100%;
+                    height: 60.000vh;
+
+                    @include media('ipad:pro@maximal', down) {
+                        height: auto;
+                    }
+
+                    ul {
+						@include display(row, center, space-between, nowrap);
+						@include position(center);
+
+                        width: 100%;
+                        height: 100%;
+
+                        @include media('ipad:pro@maximal', down) {
+							@include display(row, center, space-between, wrap);
+							
+                            position: static;
+                            transform: unset;
+                        }
+
+                        li {
+							@include shadow(normal, $color-sky, .35);
+
+                            background-color: $color-white;
+                            border-radius: 2.500em .350em 2.500em .350em;
+                            position: relative;
+                            flex-basis: 18%;
+                            text-align: center;
+                            padding: 1.800em 1.000em;
+
+                            @include media('ipad:pro@maximal', down) {
+                                flex-basis: 48%;
+
+                                &:not(:last-child) {
+                                    margin-bottom: 3.000em;
+                                }
+                            }
+
+                            @include media('phone:standard[potrait]@maximal', down) {
+                                flex-basis: 100%;
+                            }
+
+                            &:nth-child(odd) {
+                                top: -10%;
+
+                                @include media('ipad:pro@maximal', down) {
+                                    top: 0;
+                                }
+                            }
+
+                            &:nth-child(even) {
+                                bottom: -10%;
+
+                                @include media('ipad:pro@maximal', down) {
+                                    bottom: 0;
+                                }
+                            }
+
+                            img {
+                                width: 100%;
+                                height: 7.500em;
+                                object-fit: contain;
+                            }
+
+                            h3 {
+                                font-size: 1.400em;
+                                margin-top: 1.000em;
+                                margin-bottom: .400em;
+                            }
+
+                            p {
+                                font-size: .800em;
+                            }
+
+                            span {
+								@include display(row, center, center, nowrap);
+								@include position(horizontal);
+								@include gradient(to right top, $color-sky, $color-leaf);
+								@include shadow(normal, $color-sky, .35);
+
+                                color: $color-white;
+                                border: .180em solid rgba($color-sea, .9);
+                                border-radius: 50%;
+                                bottom: -5%;
+                                width: 2.500em;
+                                height: 2.500em;
+
+                                @include media('ipad:pro@maximal', down) {
+                                    font-size: 1.600em;
+                                    top: 8%;
+                                    left: 6%;
+                                    transform: unset;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
