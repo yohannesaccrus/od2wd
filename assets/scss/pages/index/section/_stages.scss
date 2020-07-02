@@ -1,14 +1,21 @@
 section {
     &.stages {
+		background-color: rgba($color-smoke, .3);
         position: relative;
-        padding: 10.000em 8%;
+		padding: 12.000em 8% 14.000em 8%;
+		clip-path: polygon(0 0, 100% 0, 99% 100%, 0 90%);
+		margin-top: -4.000em;
 
         @include media('desktop:xhdpi@maximal', down) {
             padding: 10.000em 5%;
         }
 
         @include media('desktop:hdpi@maximal', down) {
-            padding: 10.000em 3%;
+            padding: 12.000em 3% 14.000em 3%;
+		}
+		
+		@include media('ipad:pro@maximal', down) {
+            padding: 10.000em 3% 20.000em 3%;
         }
 
         .descriptive {
@@ -47,7 +54,10 @@ section {
             }
 
             &[layer=title] {
-                text-align: right;
+				text-align: right;
+				@include media('phone:standard[potrait]@maximal', down) {
+					text-align: center;
+				}
 
                 h2 {
                     color: rgba($color-dark, .7);

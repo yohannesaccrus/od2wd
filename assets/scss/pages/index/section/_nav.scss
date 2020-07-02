@@ -4,7 +4,7 @@ nav {
     transition: all .3s ease-in-out;
     position: fixed;
     width: 100%;
-    z-index: 3;
+    z-index: 5;
     padding: 1.500em 12%;
 
     @include media('desktop:xhdpi@maximal', down) {
@@ -199,8 +199,8 @@ nav {
                     }
 
                     button {
+						color: rgba($color-dark, .8);
                         font-size: .900em;
-                        text-transform: uppercase;
 
                         @include media('ipad:standard@maximal', down) {
                             font-size: .700em;

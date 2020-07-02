@@ -99,7 +99,7 @@ body[page=index] nav {
   transition: all .3s ease-in-out;
   position: fixed;
   width: 100%;
-  z-index: 3;
+  z-index: 5;
   padding: 1.500em 12%; }
   @media (max-width: 93.999em) {
     body[page=index] nav {
@@ -235,8 +235,8 @@ body[page=index] nav {
       body[page=index] nav .descriptive[layer=menu] ul li a:hover::after {
         width: 100%; }
     body[page=index] nav .descriptive[layer=menu] ul li button {
-      font-size: .900em;
-      text-transform: uppercase; }
+      color: rgba(47, 53, 66, 0.8);
+      font-size: .900em; }
       @media (max-width: 63.999em) {
         body[page=index] nav .descriptive[layer=menu] ul li button {
           font-size: .700em; } }
@@ -249,8 +249,11 @@ body[page=index] nav {
           color: #FFFFFF; } }
 
 body[page=index] section.hero {
+  background-color: #FFFFFF;
   position: relative;
-  height: 100.000vh; }
+  height: 100.000vh;
+  clip-path: polygon(0 0, 100% 0, 100% 93%, 0 100%);
+  z-index: 3; }
   @media (max-width: 74.999em) {
     body[page=index] section.hero {
       height: 50.000vh; } }
@@ -264,6 +267,7 @@ body[page=index] section.hero {
     body[page=index] section.hero {
       background: linear-gradient(to right bottom, #0246FF, #1FAFF9);
       height: 100%;
+      clip-path: unset;
       padding: 8.000em 1.000em; } }
   @media all and (max-width: 736px) and (orientation: landscape) {
     body[page=index] section.hero {
@@ -518,21 +522,28 @@ body[page=index] section.hero {
     transform: scale(1); } }
 
 body[page=index] section.form {
+  background-color: #FFFFFF;
   position: relative;
   overflow: hidden;
-  padding: 10.000em 12%; }
+  padding: 13.000em 12% 15.000em 12%;
+  clip-path: polygon(0 0, 100% 0, 99% 100%, 0 93%);
+  margin-top: -5.000em;
+  z-index: 2; }
   @media (max-width: 93.999em) {
     body[page=index] section.form {
       padding: 10.000em 10%; } }
   @media (max-width: 90.999em) {
     body[page=index] section.form {
-      padding: 10.000em 8%; } }
+      padding: 10.000em 8% 13.000em 8%; } }
   @media (max-width: 74.999em) {
     body[page=index] section.form {
-      padding: 10.000em 3.000em; } }
+      padding: 12.000em 3.000em; } }
   @media (max-width: 63.999em) {
     body[page=index] section.form {
       padding: 10.000em 1.000em; } }
+  @media (max-width: 35.499em) {
+    body[page=index] section.form {
+      padding: 13.000em 1.000em 12.000em 1.000em; } }
   body[page=index] section.form .descriptive[layer=background] .box {
     background: transparent;
     border: 0.45em solid #18C8FF;
@@ -542,7 +553,7 @@ body[page=index] section.form {
     height: 30.000em;
     transform: rotate(-30deg); }
     body[page=index] section.form .descriptive[layer=background] .box:first-child, body[page=index] section.form .descriptive[layer=background] .box:nth-child(2) {
-      bottom: -15%;
+      bottom: -10%;
       left: -15%; }
       @media (max-width: 74.999em) {
         body[page=index] section.form .descriptive[layer=background] .box:first-child, body[page=index] section.form .descriptive[layer=background] .box:nth-child(2) {
@@ -603,7 +614,8 @@ body[page=index] section.form {
     justify-content: space-between;
     flex-wrap: wrap;
     position: relative;
-    margin-top: 5.000em; }
+    margin-top: 5.000em;
+    z-index: 4; }
     @media (max-width: 63.999em) {
       body[page=index] section.form .descriptive[layer=convert] {
         margin-top: 3.000em; } }
@@ -724,14 +736,20 @@ body[page=index] section.form {
     transform: scale(0.6) rotate(-35deg); } }
 
 body[page=index] section.stages {
+  background-color: rgba(229, 240, 255, 0.3);
   position: relative;
-  padding: 10.000em 8%; }
+  padding: 12.000em 8% 14.000em 8%;
+  clip-path: polygon(0 0, 100% 0, 99% 100%, 0 90%);
+  margin-top: -4.000em; }
   @media (max-width: 93.999em) {
     body[page=index] section.stages {
       padding: 10.000em 5%; } }
   @media (max-width: 90.999em) {
     body[page=index] section.stages {
-      padding: 10.000em 3%; } }
+      padding: 12.000em 3% 14.000em 3%; } }
+  @media (max-width: 74.999em) {
+    body[page=index] section.stages {
+      padding: 10.000em 3% 20.000em 3%; } }
   body[page=index] section.stages .descriptive[layer=background] {
     display: none;
     overflow: hidden; }
@@ -761,6 +779,9 @@ body[page=index] section.stages {
         display: none; } }
   body[page=index] section.stages .descriptive[layer=title] {
     text-align: right; }
+    @media (max-width: 35.499em) {
+      body[page=index] section.stages .descriptive[layer=title] {
+        text-align: center; } }
     body[page=index] section.stages .descriptive[layer=title] h2 {
       color: rgba(47, 53, 66, 0.7);
       font-size: 2.200em; }
@@ -872,19 +893,26 @@ body[page=index] section.stages {
 
 body[page=index] section.demo {
   background-color: #E5F0FF;
-  padding: 10.000em 12%; }
+  padding: 10.000em 12% 14.000em 12%;
+  clip-path: polygon(0 0, 100% 5%, 100% 93%, 0 100%);
+  margin-top: -7.000em; }
   @media (max-width: 93.999em) {
     body[page=index] section.demo {
       padding: 10.000em 10%; } }
   @media (max-width: 90.999em) {
     body[page=index] section.demo {
-      padding: 10.000em 8%; } }
+      padding: 9.000em 8% 12.000em 8%; } }
   @media (max-width: 74.999em) {
     body[page=index] section.demo {
-      padding: 10.000em 3.000em; } }
+      padding: 10.000em 3.000em 12.000em 3.000em;
+      margin-top: -10.000em; } }
   @media (max-width: 63.999em) {
     body[page=index] section.demo {
       padding: 10.000em 1.000em; } }
+  @media (max-width: 35.499em) {
+    body[page=index] section.demo {
+      margin-top: -15.000em;
+      padding: 7.000em 1.000em 11.000em 1.000em; } }
   body[page=index] section.demo .descriptive[layer=title] h2 {
     color: rgba(47, 53, 66, 0.7);
     font-size: 2.200em; }
@@ -998,7 +1026,8 @@ body[page=index] section.demo {
 
 body[page=index] section.table {
   position: relative;
-  padding: 10.000em 12% 8.000em 12%; }
+  padding: 12.000em 12% 8.000em 12%;
+  margin-top: -3.000em; }
   @media (max-width: 93.999em) {
     body[page=index] section.table {
       padding: 10.000em 10% 8.000em 10%; } }
@@ -1011,6 +1040,9 @@ body[page=index] section.table {
   @media (max-width: 63.999em) {
     body[page=index] section.table {
       padding: 10.000em 1.000em; } }
+  @media (max-width: 35.499em) {
+    body[page=index] section.table {
+      padding: 7.000em 1.000em; } }
   body[page=index] section.table .descriptive[layer=counter] {
     display: flex;
     flex-direction: row;

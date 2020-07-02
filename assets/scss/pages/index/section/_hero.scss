@@ -1,7 +1,10 @@
 section {
     &.hero {
+		background-color: $color-white;
         position: relative;
-        height: 100.000vh;
+		height: 100.000vh;
+		clip-path: polygon(0 0, 100% 0, 100% 93%, 0 100%);
+		z-index: 3;
 
         @include media('ipad:pro@maximal', down) {
             height: 50.000vh;
@@ -18,7 +21,8 @@ section {
         @include media('phone:standard[potrait]@maximal', down) {
             @include gradient(to right bottom, $color-sky, $color-leaf);
 
-            height: 100%;
+			height: 100%;
+			clip-path: unset;
             padding: 8.000em 1.000em;
         }
 

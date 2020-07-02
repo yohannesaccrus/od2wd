@@ -1,19 +1,27 @@
 section {
     &.demo {
         background-color: $color-smoke;
-		padding: 10.000em 12%;
+		padding: 10.000em 12% 14.000em 12%;
+		clip-path: polygon(0 0, 100% 5%, 100% 93%, 0 100%);
+		margin-top: -7.000em;
+
 		@include media('desktop:xhdpi@maximal', down) {
 			padding: 10.000em 10%;
 		}
 		@include media('desktop:hdpi@maximal', down) {
-			padding: 10.000em 8%;
+			padding: 9.000em 8% 12.000em 8%;
 		}
 		@include media('ipad:pro@maximal', down) {
-			padding: 10.000em 3.000em;
+			padding: 10.000em 3.000em 12.000em 3.000em;
+			margin-top: -10.000em;
 		}
 		@include media('ipad:standard@maximal', down) {
 			padding: 10.000em 1.000em;
 		}
+		@include media('phone:standard[potrait]@maximal', down) {
+			margin-top: -15.000em;
+			padding: 7.000em 1.000em 11.000em 1.000em;
+        }
 
         .descriptive {
 			&[layer=title] {
